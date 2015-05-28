@@ -31,7 +31,7 @@ namespace SpaceBUTT
        public GraphicsDevice device;
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
-        float modelSpeed = 0.0f;
+        float modelSpeed = 5.0f;
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
@@ -67,7 +67,6 @@ namespace SpaceBUTT
         
         }
 
-     
 
 
         protected override void UnloadContent()
@@ -97,12 +96,13 @@ namespace SpaceBUTT
         }
 
         protected void UpdateInput()
-        {
+        {        
+
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             if (currentState.IsConnected)
             {
-                
-                modelSpeed = 5;
+
+               
                 modelRotationZ -= currentState.ThumbSticks.Left.X * 0.02f;
                 modelRotationX += currentState.ThumbSticks.Left.Y * 0.02f;
 
@@ -111,18 +111,22 @@ namespace SpaceBUTT
 
                 modelVelocityX.X = modelSpeed;
                 modelVelocityY.Y = modelSpeed;
-                             
+
                 modelVelocityX *= currentState.ThumbSticks.Left.X;
                 modelVelocityY *= currentState.ThumbSticks.Left.Y;
-                
-                
+
+
                 modelVelocity += modelVelocityX;
                 modelVelocity += modelVelocityY;
 
+                GamePad.SetVibration(PlayerIndex.One,
+                    currentState.Triggers.Right,
+                    currentState.Triggers.Left);
 
-
-
-
+            }
+            else { 
+            
+            }
 
                 if (modelPosition.Y >= screenHeight + 900)
                 {
@@ -140,16 +144,9 @@ namespace SpaceBUTT
                 {
                     modelPosition.X  = -(screenWidth + 1000);
                 }
-
-                GamePad.SetVibration(PlayerIndex.One,
-                    currentState.Triggers.Right,
-                    currentState.Triggers.Left);
-
-
-                // In case you get lost, press A to warp back to the center.
+           
                
-               
-            }
+            
         }
      
         protected override void Draw(GameTime gameTime)
