@@ -143,6 +143,26 @@
       <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\SkyBox_Bottom_0.xnb</Output>
       <Time>2006-11-18T13:05:58+01:00</Time>
     </Item>
+    <Item>
+      <Source>Crosshair.fbx</Source>
+      <Name>Crosshair</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb</Output>
+      <Time>2015-06-03T01:07:29.955+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Crosshair_0.xml</Key>
+        <Value>2015-06-03T01:09:14.022+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Crosshair.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Crosshair_0.xml</Output>
+      <Time>2015-06-03T01:07:29.955+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

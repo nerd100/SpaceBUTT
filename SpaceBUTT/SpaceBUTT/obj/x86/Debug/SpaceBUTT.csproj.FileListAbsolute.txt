@@ -12,3 +12,4 @@ C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceB
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\SkyBox_Front_0.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\SkyBox_Back_0.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\SkyBox_Bottom_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb
