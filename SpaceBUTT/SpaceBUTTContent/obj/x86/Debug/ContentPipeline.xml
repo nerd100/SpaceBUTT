@@ -163,6 +163,26 @@
       <Output>obj\x86\Debug\Crosshair_0.xml</Output>
       <Time>2015-06-03T01:07:29.955+02:00</Time>
     </Item>
+    <Item>
+      <Source>Asteroid.fbx</Source>
+      <Name>Asteroid</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Asteroid.xnb</Output>
+      <Time>2015-06-06T21:50:04.798+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Asteroid_0.xml</Key>
+        <Value>2015-06-06T21:56:04.203+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Asteroid.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Asteroid_0.xml</Output>
+      <Time>2015-06-06T21:50:04.798+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

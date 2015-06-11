@@ -17,19 +17,22 @@ namespace SpaceBUTT
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Spawn spawn = new Spawn();
         Crosshair cross = new Crosshair();
         Player player = new Player();
-      
+
+        int spawnTimer = 0;
+        int spawnTime = 100;
+
         public Matrix View;
         public Matrix Projection;      
         public GraphicsDevice device;
          
-        Vector3 cameraPosition = new Vector3(0.0f, 1500.0f, 5000.0f);
+        Vector3 cameraPosition = new Vector3(0.0f, 1000.0f, 5000.0f);
         Vector3 cameraView = new Vector3(0.0f, 0.0f, 0.0f);
      
         float aspectRatio;
-        
-    
+           
 
         public Game1()
         {
@@ -44,25 +47,29 @@ namespace SpaceBUTT
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 800;
             graphics.ApplyChanges();
-
+           
             base.Initialize();
         }
 
       
         protected override void LoadContent()
         {
-            player.LoadContent(Content);
-            spriteBatch = new SpriteBatch(GraphicsDevice);             
+            device = graphics.GraphicsDevice;
+           
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+             
             aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
-            Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), aspectRatio, 1.0f, 10000.0f);
+            Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), aspectRatio, 1.0f, 100000.0f);
             View = Matrix.CreateLookAt(cameraPosition, cameraView, Vector3.Up);
+
+            player.LoadContent(Content);
             cross.LoadContent(Content);
+      
         }
 
 
         protected override void UnloadContent()
-        {
-      
+        {     
         }
 
      
@@ -70,14 +77,22 @@ namespace SpaceBUTT
         {
             KeyboardState stat = Keyboard.GetState();
             if (stat.IsKeyDown(Keys.Escape))          
-                this.Exit();
-            
+                this.Exit();         
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            
+
+            if (spawnTimer > spawnTime)
+              {
+                  spawnTimer = 0;
+                  spawn.LoadContent(Content);
+              }
+
+
             player.Update(gameTime);
-            cross.Update();
-           
+            cross.Update(gameTime);
+            spawn.Update(gameTime);
+
+            spawnTimer++;
 
             View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
         
@@ -88,14 +103,13 @@ namespace SpaceBUTT
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
+            
             player.Draw(Projection, View);
-            cross.Draw(Projection,View);
+            cross.Draw(Projection,View);            
+            spawn.Draw(Projection, View);
+            
             base.Draw(gameTime);
         }
-
-
-        
-
-        
+       
     }
 }

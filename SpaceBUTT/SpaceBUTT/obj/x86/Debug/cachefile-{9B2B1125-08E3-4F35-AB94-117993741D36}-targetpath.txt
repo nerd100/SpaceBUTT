@@ -7,3 +7,4 @@ Content\SkyBox_Front_0.xnb
 Content\SkyBox_Back_0.xnb
 Content\SkyBox_Bottom_0.xnb
 Content\Crosshair.xnb
+Content\Asteroid.xnb

@@ -22,7 +22,7 @@ namespace SpaceBUTT
         Vector3 modelVelocity = new Vector3(0, 0, 0);
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
-        float modelSpeed = 5.0f;
+        float modelSpeed = 7.0f;
 
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
