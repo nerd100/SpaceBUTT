@@ -18,9 +18,10 @@ namespace SpaceBUTT
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Spawn spawn = new Spawn();
+        
         Crosshair cross = new Crosshair();
         Player player = new Player();
-
+        Shoot shoot = new Shoot();
         int spawnTimer = 0;
         int spawnTime = 100;
 
@@ -72,33 +73,68 @@ namespace SpaceBUTT
         {     
         }
 
-     
         protected override void Update(GameTime gameTime)
         {
             KeyboardState stat = Keyboard.GetState();
             if (stat.IsKeyDown(Keys.Escape))          
-                this.Exit();         
+                this.Exit();                
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            if (stat.IsKeyDown(Keys.Space))
+                shoot.LoadContent(Content, player.modelPosition);  
             if (spawnTimer > spawnTime)
               {
                   spawnTimer = 0;
                   spawn.LoadContent(Content);
               }
 
+            for (int j = 0; j < shoot.laser.Count(); j++)
+            {
+                collisionCheck2(shoot.laser[j].getBoundingSphere());
+            }
+
+            collisionCheck(player.getBoundingSphere());
+             
 
             player.Update(gameTime);
             cross.Update(gameTime);
             spawn.Update(gameTime);
+            shoot.Update(gameTime);
 
             spawnTimer++;
 
             View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
-        
-            base.Update(gameTime);
+
+          base.Update(gameTime);
         }
-    
+
+      
+
+        public bool collisionCheck(BoundingSphere sphere)
+        {
+            for(int i = 0;i < spawn.enemies.Count();i++)
+            if (spawn.enemies[i].getBoundingSphere().Intersects(sphere) )
+            {
+                //blow up ship
+                spawn.enemies.RemoveAt(i);
+                 //exit the loop
+            }
+            return false;
+        }
+
+        public bool collisionCheck2(BoundingSphere sphere)
+        {
+
+            for (int i = 0; i < spawn.enemies.Count(); i++)
+                if (spawn.enemies[i].getBoundingSphere().Intersects(sphere))
+                {
+                    //blow up ship
+                    spawn.enemies.RemoveAt(i);
+                    //exit the loop
+                }
+
+            return false;
+        }
 
         protected override void Draw(GameTime gameTime)
         {
@@ -107,7 +143,7 @@ namespace SpaceBUTT
             player.Draw(Projection, View);
             cross.Draw(Projection,View);            
             spawn.Draw(Projection, View);
-            
+            shoot.Draw(Projection, View);
             base.Draw(gameTime);
         }
        

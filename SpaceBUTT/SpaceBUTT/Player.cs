@@ -12,13 +12,10 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SpaceBUTT
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
-    class Player
+   public class Player
     {
         Model myModel;
-        Vector3 modelPosition = new Vector3(0, 0, 0);
+        public Vector3 modelPosition = new Vector3(0, 0, 0);
         Vector3 modelVelocity = new Vector3(0, 0, 0);
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
@@ -42,7 +39,7 @@ namespace SpaceBUTT
             modelVelocity *= 0.95f;
             modelRotationX *= 0.95f;
             modelRotationZ *= 0.95f;
-       
+            getBoundingSphere();
         }
 
         public void UpdateInput()
@@ -123,6 +120,28 @@ namespace SpaceBUTT
                 modelPosition.X = -(screenWidth + 1000);
             }
         }
+
+
+        public BoundingSphere getBoundingSphere()
+        {
+            BoundingSphere sphere = new BoundingSphere();
+
+            foreach (ModelMesh mesh in myModel.Meshes)
+            {
+                if (sphere.Radius == 0)
+                    sphere = mesh.BoundingSphere;
+                else
+                    sphere = BoundingSphere.CreateMerged(sphere, mesh.BoundingSphere);
+            }
+
+            sphere.Center = modelPosition;
+
+            sphere.Radius *= 0.95f;
+            return sphere;
+        }
+
+
+
 
         public void Draw(Matrix proj,Matrix view)
         {         

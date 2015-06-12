@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -9,45 +9,40 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-
 namespace SpaceBUTT
 {
-    public class Asteroid
+   public class Laser
     {
-        public Model asteroid;
-        public Matrix world = Matrix.Identity;
-        public float asteroidRotationX;       
-        public Vector3 asteroidPos;
-        
-        Random rnd = new Random();
-        private int scale;
-        private int streuung;
-        private int asteroidSpeed;
+        public Model laser;
+        public Matrix world = Matrix.Identity;      
+        public Vector3 laserPos;
+      
+        private int laserSpeed;
 
-        public Asteroid(Model m,Vector3 ePos)
+       
+
+        public Laser(Model m,Vector3 ePos)
         {
-            asteroidPos = ePos;
-            asteroid = m;
-            scale = rnd.Next(3,6);
-            streuung = rnd.Next(-5,5);
-            asteroidSpeed = rnd.Next(0, 50);
+            laserPos = ePos;
+            laser = m;
+            laserSpeed = 500;
         }
 
         
         public void Update(GameTime gameTime)
         {
-            asteroidRotationX += 0.01f;
-            asteroidPos.Z += asteroidSpeed;
-            asteroidPos.X += streuung;
+
+            laserPos.Z -= laserSpeed;
 
             getBoundingSphere();
+
         }
 
         public BoundingSphere getBoundingSphere()
         {
             BoundingSphere sphere = new BoundingSphere();
 
-            foreach (ModelMesh mesh in asteroid.Meshes)
+            foreach (ModelMesh mesh in laser.Meshes)
             {
                 if (sphere.Radius == 0)
                     sphere = mesh.BoundingSphere;
@@ -55,24 +50,23 @@ namespace SpaceBUTT
                     sphere = BoundingSphere.CreateMerged(sphere, mesh.BoundingSphere);
             }
 
-            sphere.Center = asteroidPos;
+            sphere.Center = laserPos;
 
-            sphere.Radius *= 2;
+            sphere.Radius *= 2.0f;
             return sphere;
         }
-       
+
 
     public void Draw(Matrix Projection, Matrix View)
         {
-            foreach (ModelMesh mesh in asteroid.Meshes)
+            foreach (ModelMesh mesh in laser.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
                     
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180))
-                        * Matrix.CreateScale(scale) * Matrix.CreateRotationX(asteroidRotationX)
-                         * Matrix.CreateTranslation(asteroidPos);
+                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateScale(2)      
+                         * Matrix.CreateTranslation(laserPos);
                     effect.View = View;
                     effect.Projection = Projection;
                 }
