@@ -15,18 +15,14 @@ namespace SpaceBUTT
     {
         
         public List<Laser> laser = new List<Laser>();
-        SoundEffect soundEngine;
-        SoundEffectInstance soundEngineInstance;
-        SoundEffect soundHyperspaceActivation;
-        Song song;
+       
 
         public void LoadContent(ContentManager Content,Vector3 modelPos)
         {
             Model bullet = Content.Load<Model>("Laser");
         
             laser.Add(new Laser(bullet,modelPos));
-            song = Content.Load<Song>("LaserSound");
-            MediaPlayer.Play(song);
+        
         }
 
 

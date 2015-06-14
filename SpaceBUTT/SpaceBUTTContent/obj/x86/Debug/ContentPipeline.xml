@@ -213,6 +213,15 @@
       <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma</Extra>
       <Time>2015-06-12T16:19:35.2708+02:00</Time>
     </Item>
+    <Item>
+      <Source>georgia.spritefont</Source>
+      <Name>georgia</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb</Output>
+      <Time>2015-06-14T14:20:08.694+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -15,11 +15,20 @@ namespace SpaceBUTT
    public class Player
     {
         Model myModel;
+        public Shoot shoot = new Shoot();
+
+        int shootTime = 10;
+        int shootTimer = 0;
+
         public Vector3 modelPosition = new Vector3(0, 0, 0);
         Vector3 modelVelocity = new Vector3(0, 0, 0);
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
         float modelSpeed = 7.0f;
+
+        bool BarrelRoll = true;
+        int BarrelRollTimer = 0;
+        int BarrelRollTime = 120;
 
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -31,18 +40,30 @@ namespace SpaceBUTT
         }
 
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime,ContentManager Content, List<Asteroid> enemies)
         {
-            UpdateInput();          
+            KeyboardState stat = Keyboard.GetState();
+                      
             modelPosition += modelVelocity;
+
+            UpdateInput(Content,enemies);
 
             modelVelocity *= 0.95f;
             modelRotationX *= 0.95f;
             modelRotationZ *= 0.95f;
             getBoundingSphere();
+            shoot.Update(gameTime);
+            shootTimer++;
+            if (BarrelRollTimer >= BarrelRollTime)
+            {
+                BarrelRollTimer = 0;
+                BarrelRoll = true;
+            }
+            BarrelRollTimer++;
+
         }
 
-        public void UpdateInput()
+        public void UpdateInput(ContentManager Content,List<Asteroid> enemies)
         {
 
             KeyboardState stat = Keyboard.GetState();
@@ -101,6 +122,32 @@ namespace SpaceBUTT
                     modelVelocityX *= 1;
                     modelVelocity += modelVelocityX;
                 }
+                if (stat.IsKeyDown(Keys.F) && BarrelRoll == true) //BarrelRoll
+                {
+                    BarrelRoll = false;
+                    modelRotationZ -= MathHelper.ToRadians(360);
+                    modelVelocity.X -= 100;
+                    
+                }
+                if (stat.IsKeyDown(Keys.G) && BarrelRoll == true) //BarrelRoll
+                {
+                    BarrelRoll = false;
+                    modelRotationZ = MathHelper.ToRadians(360);
+                    modelVelocity.X += 100;
+
+                }
+                if (stat.IsKeyDown(Keys.Space) && shootTimer >= shootTime)
+                {
+                    shootTimer = 0;
+                    shoot.LoadContent(Content, modelPosition);
+
+                }
+                if (stat.IsKeyDown(Keys.E))
+                {
+                    for (int i = 0; i < enemies.Count(); i++)
+                        enemies.RemoveAt(i);
+                }
+                
             }
             //screensize TODO: Was anderes überlegen!
             if (modelPosition.Y >= screenHeight + 900)
@@ -144,7 +191,8 @@ namespace SpaceBUTT
 
 
         public void Draw(Matrix proj,Matrix view)
-        {         
+        {
+            shoot.Draw(proj, view);
             DrawModel(myModel,proj,view); 
         }
 

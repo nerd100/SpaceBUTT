@@ -17,3 +17,4 @@ C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceB
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Laser.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb

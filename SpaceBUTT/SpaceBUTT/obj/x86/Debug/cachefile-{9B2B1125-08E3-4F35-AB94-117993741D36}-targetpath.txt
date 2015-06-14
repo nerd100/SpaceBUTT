@@ -11,3 +11,4 @@ Content\Asteroid.xnb
 Content\Laser.xnb
 Content\LaserSound.xnb
 Content\LaserSound.wma
+Content\georgia.xnb

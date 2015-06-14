@@ -13,11 +13,11 @@ using Microsoft.Xna.Framework.Media;
 namespace SpaceBUTT 
 {
    
-    class Crosshair
+    public class Crosshair
     {
 
         Model crosshair;
-        public Vector3 CrossPos = new Vector3(0, 0, -5000);
+        public Vector3 CrossPos = new Vector3(0, 0, -10000);
         Vector3 modelVelocity = new Vector3(0, 0, 0);
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;

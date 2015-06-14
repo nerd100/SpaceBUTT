@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
     <Compile Include="Crosshair.cs" />
+    <Compile Include="HUD.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

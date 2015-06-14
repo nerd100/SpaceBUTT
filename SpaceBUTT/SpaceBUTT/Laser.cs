@@ -65,7 +65,7 @@ namespace SpaceBUTT
                 {
                     
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateScale(2)      
+                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateScale(5)      
                          * Matrix.CreateTranslation(laserPos);
                     effect.View = View;
                     effect.Projection = Projection;

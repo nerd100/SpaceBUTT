@@ -14,7 +14,7 @@ namespace SpaceBUTT
 {   
     public class Spawn
     {
-       public List<Asteroid> enemies = new List<Asteroid>();
+        public List<Asteroid> enemies = new List<Asteroid>();
         Random rnd = new Random();
         
         public void LoadContent(ContentManager Content)

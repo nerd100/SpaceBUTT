@@ -21,7 +21,8 @@ namespace SpaceBUTT
         
         Crosshair cross = new Crosshair();
         Player player = new Player();
-        Shoot shoot = new Shoot();
+        HUD hud = new HUD();
+
         int spawnTimer = 0;
         int spawnTime = 100;
 
@@ -63,6 +64,7 @@ namespace SpaceBUTT
             Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), aspectRatio, 1.0f, 100000.0f);
             View = Matrix.CreateLookAt(cameraPosition, cameraView, Vector3.Up);
 
+            hud.LoadContent(Content);
             player.LoadContent(Content);
             cross.LoadContent(Content);
       
@@ -80,26 +82,31 @@ namespace SpaceBUTT
                 this.Exit();                
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            if (stat.IsKeyDown(Keys.Space))
-                shoot.LoadContent(Content, player.modelPosition);  
+
+
+        
+
+
             if (spawnTimer > spawnTime)
               {
                   spawnTimer = 0;
                   spawn.LoadContent(Content);
               }
 
-            for (int j = 0; j < shoot.laser.Count(); j++)
+
+
+            for (int j = 0; j < player.shoot.laser.Count(); j++)
             {
-                collisionCheck2(shoot.laser[j].getBoundingSphere());
+                collisionCheck2(player.shoot.laser[j].getBoundingSphere());
             }
 
             collisionCheck(player.getBoundingSphere());
              
 
-            player.Update(gameTime);
+            player.Update(gameTime,Content,spawn.enemies);
             cross.Update(gameTime);
             spawn.Update(gameTime);
-            shoot.Update(gameTime);
+            hud.Update(gameTime,player.modelPosition,spawn.enemies.Count());
 
             spawnTimer++;
 
@@ -113,37 +120,32 @@ namespace SpaceBUTT
         public bool collisionCheck(BoundingSphere sphere)
         {
             for(int i = 0;i < spawn.enemies.Count();i++)
-            if (spawn.enemies[i].getBoundingSphere().Intersects(sphere) )
-            {
-                //blow up ship
-                spawn.enemies.RemoveAt(i);
-                 //exit the loop
-            }
+                if (spawn.enemies[i].getBoundingSphere().Intersects(sphere) )
+                {
+                    spawn.enemies.RemoveAt(i);
+                }
             return false;
         }
 
         public bool collisionCheck2(BoundingSphere sphere)
         {
-
             for (int i = 0; i < spawn.enemies.Count(); i++)
                 if (spawn.enemies[i].getBoundingSphere().Intersects(sphere))
-                {
-                    //blow up ship
-                    spawn.enemies.RemoveAt(i);
-                    //exit the loop
+                {                 
+                    spawn.enemies.RemoveAt(i);     
                 }
-
             return false;
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            
+
+            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             player.Draw(Projection, View);
             cross.Draw(Projection,View);            
             spawn.Draw(Projection, View);
-            shoot.Draw(Projection, View);
+            hud.Draw(spriteBatch);
             base.Draw(gameTime);
         }
        
