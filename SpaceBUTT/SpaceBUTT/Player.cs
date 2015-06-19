@@ -15,7 +15,7 @@ namespace SpaceBUTT
    public class Player
     {
         Model myModel;
-        public Shoot shoot = new Shoot();
+        public Spawn shoot = new Spawn();
 
         int shootTime = 10;
         int shootTimer = 0;
@@ -52,8 +52,9 @@ namespace SpaceBUTT
             modelRotationX *= 0.95f;
             modelRotationZ *= 0.95f;
             getBoundingSphere();
-            shoot.Update(gameTime);
+            shoot.Update(gameTime,Content,modelPosition);
             shootTimer++;
+
             if (BarrelRollTimer >= BarrelRollTime)
             {
                 BarrelRollTimer = 0;
@@ -140,6 +141,7 @@ namespace SpaceBUTT
                 {
                     shootTimer = 0;
                     shoot.LoadContent(Content, modelPosition);
+                    
 
                 }
                 if (stat.IsKeyDown(Keys.E))
@@ -183,7 +185,7 @@ namespace SpaceBUTT
 
             sphere.Center = modelPosition;
 
-            sphere.Radius *= 0.95f;
+            sphere.Radius *= 0.5f;
             return sphere;
         }
 

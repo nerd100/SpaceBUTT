@@ -18,10 +18,11 @@ namespace SpaceBUTT
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Spawn spawn = new Spawn();
-        
+        Collision collision = new Collision();
         Crosshair cross = new Crosshair();
         Player player = new Player();
         HUD hud = new HUD();
+       
 
         int spawnTimer = 0;
         int spawnTime = 100;
@@ -31,7 +32,7 @@ namespace SpaceBUTT
         public GraphicsDevice device;
          
         Vector3 cameraPosition = new Vector3(0.0f, 1000.0f, 5000.0f);
-        Vector3 cameraView = new Vector3(0.0f, 0.0f, 0.0f);
+        Vector3 cameraView = Vector3.Zero;
      
         float aspectRatio;
            
@@ -67,6 +68,8 @@ namespace SpaceBUTT
             hud.LoadContent(Content);
             player.LoadContent(Content);
             cross.LoadContent(Content);
+            
+           
       
         }
 
@@ -83,30 +86,18 @@ namespace SpaceBUTT
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-
-        
-
-
             if (spawnTimer > spawnTime)
               {
                   spawnTimer = 0;
-                  spawn.LoadContent(Content);
+                  spawn.LoadContent1(Content);
+                  spawn.LoadContent2(Content);
               }
 
-
-
-            for (int j = 0; j < player.shoot.laser.Count(); j++)
-            {
-                collisionCheck2(player.shoot.laser[j].getBoundingSphere());
-            }
-
-            collisionCheck(player.getBoundingSphere());
-             
-
-            player.Update(gameTime,Content,spawn.enemies);
+            collision.Update(gameTime,player,spawn,hud);
+            player.Update(gameTime, Content, spawn.asteroid);
             cross.Update(gameTime);
-            spawn.Update(gameTime);
-            hud.Update(gameTime,player.modelPosition,spawn.enemies.Count());
+            spawn.Update(gameTime,Content,player.modelPosition);
+            hud.Update(gameTime, player.modelPosition, spawn.asteroid.Count());
 
             spawnTimer++;
 
@@ -114,28 +105,7 @@ namespace SpaceBUTT
 
           base.Update(gameTime);
         }
-
       
-
-        public bool collisionCheck(BoundingSphere sphere)
-        {
-            for(int i = 0;i < spawn.enemies.Count();i++)
-                if (spawn.enemies[i].getBoundingSphere().Intersects(sphere) )
-                {
-                    spawn.enemies.RemoveAt(i);
-                }
-            return false;
-        }
-
-        public bool collisionCheck2(BoundingSphere sphere)
-        {
-            for (int i = 0; i < spawn.enemies.Count(); i++)
-                if (spawn.enemies[i].getBoundingSphere().Intersects(sphere))
-                {                 
-                    spawn.enemies.RemoveAt(i);     
-                }
-            return false;
-        }
 
         protected override void Draw(GameTime gameTime)
         {
@@ -146,6 +116,7 @@ namespace SpaceBUTT
             cross.Draw(Projection,View);            
             spawn.Draw(Projection, View);
             hud.Draw(spriteBatch);
+           
             base.Draw(gameTime);
         }
        

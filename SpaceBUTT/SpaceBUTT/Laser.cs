@@ -13,8 +13,7 @@ namespace SpaceBUTT
 {
    public class Laser
     {
-        public Model laser;
-        public Matrix world = Matrix.Identity;      
+        public Model laser;     
         public Vector3 laserPos;
       
         private int laserSpeed;
@@ -27,6 +26,8 @@ namespace SpaceBUTT
             laser = m;
             laserSpeed = 500;
         }
+
+       
 
         
         public void Update(GameTime gameTime)
