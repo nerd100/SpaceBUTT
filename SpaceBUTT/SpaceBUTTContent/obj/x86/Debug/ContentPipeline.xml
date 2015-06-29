@@ -107,44 +107,24 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox.xnb</Output>
-      <Time>2015-06-16T18:01:05.49+02:00</Time>
+      <Time>2015-06-29T18:23:05.146+02:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\skybox_0.xml</Key>
-        <Value>2015-06-16T18:23:21.501+02:00</Value>
+        <Value>2015-06-29T18:23:07.006+02:00</Value>
       </Dependency>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox_texture_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>skybox_texture.jpg</Source>
-      <Name>skybox_texture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox_texture.xnb</Output>
-      <Time>2015-06-16T18:01:17.969+02:00</Time>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb</Request>
     </Item>
     <Item>
       <Source>skybox.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\skybox_0.xml</Output>
-      <Time>2015-06-16T18:01:05.49+02:00</Time>
-    </Item>
-    <Item>
-      <Source>skybox_texture.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox_texture_0.xnb</Output>
-      <Time>2015-06-16T18:01:17.969+02:00</Time>
+      <Time>2015-06-29T18:23:05.146+02:00</Time>
     </Item>
     <Item>
       <Source>Healthbar1.jpg</Source>
@@ -174,6 +154,165 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\EnemyShip_0.xml</Output>
       <Time>2015-06-18T17:52:07.123+02:00</Time>
+    </Item>
+    <Item>
+      <Source>effects.fx</Source>
+      <Name>effects</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\effects.xnb</Output>
+      <Time>2015-06-28T19:28:47.232+02:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_bk.tga</Source>
+      <Name>purplenebula_bk</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_dn.tga</Source>
+      <Name>purplenebula_dn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_ft.tga</Source>
+      <Name>purplenebula_ft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_lf.tga</Source>
+      <Name>purplenebula_lf</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_rt.tga</Source>
+      <Name>purplenebula_rt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_up.tga</Source>
+      <Name>purplenebula_up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_up.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_rt.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_lf.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_ft.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_bk.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>purplenebula_dn.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb</Output>
+      <Time>2002-03-13T11:37:06+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

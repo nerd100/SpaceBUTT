@@ -32,9 +32,9 @@ namespace SpaceBUTT
         public void LoadContent1(ContentManager Content)
         {           
             Model asteroiden = Content.Load<Model>("Asteroid");
-                                          
-            int x = rnd.Next(-2000, 2000);
-            int y = rnd.Next(-2000, 2000);
+
+            int x = rnd.Next(-10000, 10000);
+            int y = rnd.Next(-10000, 10000);
             asteroid.Add(new Asteroid(asteroiden, new Vector3(x, y, -20000)));
 
         }

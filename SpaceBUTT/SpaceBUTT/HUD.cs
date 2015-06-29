@@ -54,7 +54,7 @@ namespace SpaceBUTT
             playerScoreFont = Content.Load<SpriteFont>("georgia");
             texture = Content.Load <Texture2D>("Healthbar1");
             position = new Vector2(500, 10);
-            rectangle = new Rectangle(0, 0, texture.Width, texture.Height);
+            rectangle = new Rectangle(0, 0, 300, texture.Height);
         }
 
         //Update
@@ -101,7 +101,7 @@ namespace SpaceBUTT
                 spriteBatch.DrawString(playerScoreFont, "Enemies = " + EnemieCount, new Vector2(10, 80), Color.White);
                 spriteBatch.DrawString(playerScoreFont, "BarrelRoll with F or G" , new Vector2(10, 100), Color.White);
                 spriteBatch.DrawString(playerScoreFont, "Screenclear with E " , new Vector2(10, 120), Color.White);
-
+                spriteBatch.DrawString(playerScoreFont, "Press 1-3 for difficulty  ", new Vector2(10, 140), Color.White);
                 spriteBatch.Draw(texture, position, rectangle,Color.White);
               
               

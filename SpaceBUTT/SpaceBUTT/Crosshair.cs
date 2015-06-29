@@ -23,6 +23,10 @@ namespace SpaceBUTT
         float modelRotationX = 0.0f;
         float modelSpeed = 7.0f;
 
+        bool BarrelRoll = true;
+        int BarrelRollTimer = 0;
+        int BarrelRollTime = 120;
+
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
@@ -48,6 +52,12 @@ namespace SpaceBUTT
             Vector3 modelVelocityX = Vector3.Zero;
             Vector3 modelVelocityY = Vector3.Zero;
 
+            if (BarrelRollTimer >= BarrelRollTime)
+            {
+                BarrelRollTimer = 0;
+                BarrelRoll = true;
+            }
+            BarrelRollTimer++;
             //Xbox controls
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             if (currentState.IsConnected)
@@ -67,6 +77,21 @@ namespace SpaceBUTT
                 GamePad.SetVibration(PlayerIndex.One,
                     currentState.Triggers.Right,
                     currentState.Triggers.Left);
+
+                if (currentState.IsButtonDown(Buttons.RightShoulder) && BarrelRoll == true)
+                {
+                    BarrelRoll = false;
+                    modelRotationZ = MathHelper.ToRadians(360);
+                    modelVelocity.X += 100;
+                }
+                if (currentState.IsButtonDown(Buttons.LeftShoulder) && BarrelRoll == true)
+                {
+                    BarrelRoll = false;
+                    modelRotationZ -= MathHelper.ToRadians(360);
+                    modelVelocity.X -= 100;
+                }
+                
+
             }
             else
             {
@@ -99,6 +124,21 @@ namespace SpaceBUTT
                     modelVelocityX.X = modelSpeed;
                     modelVelocityX *= 1;
                     modelVelocity += modelVelocityX;
+                }
+
+                if (stat.IsKeyDown(Keys.F) && BarrelRoll == true) //BarrelRoll
+                {
+                    BarrelRoll = false;
+                    modelRotationZ -= MathHelper.ToRadians(360);
+                    modelVelocity.X -= 100;
+
+                }
+                if (stat.IsKeyDown(Keys.G) && BarrelRoll == true) //BarrelRoll
+                {
+                    BarrelRoll = false;
+                    modelRotationZ = MathHelper.ToRadians(360);
+                    modelVelocity.X += 100;
+
                 }
             }
             //screensize TODO: Was anderes überlegen!

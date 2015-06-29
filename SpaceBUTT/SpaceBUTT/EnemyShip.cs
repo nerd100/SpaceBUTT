@@ -20,6 +20,9 @@ namespace SpaceBUTT
        public int EnemySpeed;
        public Spawn shoot1 = new Spawn();
 
+       public int EnemyHealth = 2;
+
+     
        int shootTime = 100;
        int shootTimer = 0;
 
@@ -40,10 +43,12 @@ namespace SpaceBUTT
 
             }
 
-
+          
             shoot1.Update(gameTime, Content, PlayerPos);
             EnemyPos.Z += EnemySpeed;
+          //  EnemyPos.Y += ;
             shootTimer++;
+           
         }
 
         public void Shoot(ContentManager Content, Vector3 EnemyPos, Vector3 PlayerPos)

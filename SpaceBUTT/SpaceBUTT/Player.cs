@@ -25,13 +25,17 @@ namespace SpaceBUTT
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
         float modelSpeed = 7.0f;
+        public float playerHealth = 100.0f;
 
         bool BarrelRoll = true;
         int BarrelRollTimer = 0;
         int BarrelRollTime = 120;
 
+       
+
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+
 
 
         public void LoadContent(ContentManager Content)
@@ -40,37 +44,41 @@ namespace SpaceBUTT
         }
 
 
-        public void Update(GameTime gameTime,ContentManager Content, List<Asteroid> enemies)
+        public void Update(GameTime gameTime, ContentManager Content, List<Asteroid> asteroids, List<EnemyShip> enemies)
         {
             KeyboardState stat = Keyboard.GetState();
-                      
-            modelPosition += modelVelocity;
-
-            UpdateInput(Content,enemies);
-
-            modelVelocity *= 0.95f;
-            modelRotationX *= 0.95f;
-            modelRotationZ *= 0.95f;
-            getBoundingSphere();
-            shoot.Update(gameTime,Content,modelPosition);
-            shootTimer++;
 
             if (BarrelRollTimer >= BarrelRollTime)
             {
                 BarrelRollTimer = 0;
-                BarrelRoll = true;
+                BarrelRoll = true; 
             }
+
+
+            modelPosition += modelVelocity;
+
+            UpdateInput(Content,asteroids,enemies);
+
+            modelVelocity *= 0.95f;
+            modelRotationX *= 0.95f;
+            modelRotationZ *= 0.95f;
+
+            getBoundingSphere();
+            shoot.Update(gameTime,Content,modelPosition);
+            shootTimer++;
+
+           
             BarrelRollTimer++;
 
         }
 
-        public void UpdateInput(ContentManager Content,List<Asteroid> enemies)
+        public void UpdateInput(ContentManager Content,List<Asteroid> asteroids, List<EnemyShip>enemies)
         {
 
             KeyboardState stat = Keyboard.GetState();
             Vector3 modelVelocityX = Vector3.Zero;
             Vector3 modelVelocityY = Vector3.Zero;
-
+            
             //Xbox controls
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             if (currentState.IsConnected)
@@ -89,7 +97,27 @@ namespace SpaceBUTT
 
                  GamePad.SetVibration(PlayerIndex.One,
                      currentState.Triggers.Right,
-                     currentState.Triggers.Left);  
+                     currentState.Triggers.Left);
+                
+                 if (currentState.IsButtonDown(Buttons.RightShoulder) && BarrelRoll == true)
+                 {
+                     BarrelRoll = false;
+                     modelRotationZ = MathHelper.ToRadians(360);
+                     modelVelocity.X += 100;   
+                 }
+                 if (currentState.IsButtonDown(Buttons.LeftShoulder) && BarrelRoll == true)
+                 {
+                     BarrelRoll = false;
+                     modelRotationZ -= MathHelper.ToRadians(360);
+                     modelVelocity.X -= 100;
+                 }
+                 if (currentState.IsButtonDown(Buttons.A) && shootTimer >= shootTime)
+                 {
+                     shootTimer = 0;
+                     shoot.LoadContent(Content, modelPosition);
+
+                 }
+
             }
             else
             {     
@@ -146,6 +174,8 @@ namespace SpaceBUTT
                 }
                 if (stat.IsKeyDown(Keys.E))
                 {
+                    for (int i = 0; i < asteroids.Count(); i++)
+                        asteroids.RemoveAt(i);
                     for (int i = 0; i < enemies.Count(); i++)
                         enemies.RemoveAt(i);
                 }

@@ -46,11 +46,7 @@ namespace SpaceBUTT
             EnemyLaserPos.X += (x / u) * EnemyLaserSpeed;
             EnemyLaserPos.Y += (y / u) * EnemyLaserSpeed;
             EnemyLaserPos.Z += (z / u) * EnemyLaserSpeed;
-
-            
-          
-
-            
+   
 
             getBoundingSphere();
         }

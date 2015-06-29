@@ -15,6 +15,7 @@ namespace SpaceBUTT
 
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Spawn spawn = new Spawn();
@@ -22,11 +23,14 @@ namespace SpaceBUTT
         Crosshair cross = new Crosshair();
         Player player = new Player();
         HUD hud = new HUD();
-       
-
+        Effect effect;
+        Skybox skybox = new Skybox();
+        int spawnEnemyTimer = 0;
         int spawnTimer = 0;
-        int spawnTime = 100;
-
+        int spawnTime = 10;
+        int spawnEnemyTime = 50;
+    
+        
         public Matrix View;
         public Matrix Projection;      
         public GraphicsDevice device;
@@ -35,6 +39,9 @@ namespace SpaceBUTT
         Vector3 cameraView = Vector3.Zero;
      
         float aspectRatio;
+
+
+       
            
 
         public Game1()
@@ -54,7 +61,8 @@ namespace SpaceBUTT
             base.Initialize();
         }
 
-      
+
+  
         protected override void LoadContent()
         {
             device = graphics.GraphicsDevice;
@@ -64,13 +72,11 @@ namespace SpaceBUTT
             aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
             Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), aspectRatio, 1.0f, 100000.0f);
             View = Matrix.CreateLookAt(cameraPosition, cameraView, Vector3.Up);
-
+            effect = Content.Load<Effect>("effects");
             hud.LoadContent(Content);
             player.LoadContent(Content);
             cross.LoadContent(Content);
-            
-           
-      
+            skybox.LoadContent(Content, effect);
         }
 
 
@@ -82,25 +88,37 @@ namespace SpaceBUTT
         {
             KeyboardState stat = Keyboard.GetState();
             if (stat.IsKeyDown(Keys.Escape))          
-                this.Exit();                
+                this.Exit();
+
+            if (stat.IsKeyDown(Keys.D1))    
+                spawnEnemyTime = 100;
+            if (stat.IsKeyDown(Keys.D2))
+                spawnEnemyTime = 50;
+            if (stat.IsKeyDown(Keys.D3))
+                spawnEnemyTime = 10;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+    
 
             if (spawnTimer > spawnTime)
               {
                   spawnTimer = 0;
-                  spawn.LoadContent1(Content);
-                  spawn.LoadContent2(Content);
+                  spawn.LoadContent1(Content);    
               }
+            if (spawnEnemyTimer > spawnEnemyTime)
+            {
+                spawnEnemyTimer = 0;
+                spawn.LoadContent2(Content);
+            }
 
             collision.Update(gameTime,player,spawn,hud);
-            player.Update(gameTime, Content, spawn.asteroid);
+            player.Update(gameTime, Content, spawn.asteroid,spawn.enemies);
             cross.Update(gameTime);
             spawn.Update(gameTime,Content,player.modelPosition);
-            hud.Update(gameTime, player.modelPosition, spawn.asteroid.Count());
+            hud.Update(gameTime, player.modelPosition, spawn.asteroid.Count()+spawn.enemies.Count());
 
             spawnTimer++;
-
+            spawnEnemyTimer++;
             View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
 
           base.Update(gameTime);
@@ -109,8 +127,12 @@ namespace SpaceBUTT
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+           
+           // GraphicsDevice.Clear(Color.Black);
+            //device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.DarkSlateBlue, 1.0f, 0);
 
+            skybox.Draw(Projection, View, device);
+            
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             player.Draw(Projection, View);
             cross.Draw(Projection,View);            

@@ -30,7 +30,7 @@ namespace SpaceBUTT
             asteroid = m;
             scale = rnd.Next(3,6);
             streuung = rnd.Next(-5,5);
-            asteroidSpeed = rnd.Next(10, 50);
+            asteroidSpeed = rnd.Next(10, 100);
         }
 
         
