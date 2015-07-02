@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -268,7 +268,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>aluminium</Name>
       <Identity>
-        <SourceFilename>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -282,7 +282,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>red_wine</Name>
       <Identity>
-        <SourceFilename>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -296,7 +296,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>Mat.1</Name>
       <Identity>
-        <SourceFilename>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -310,7 +310,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>bottle_glass</Name>
       <Identity>
-        <SourceFilename>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTTContent\Ship1.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

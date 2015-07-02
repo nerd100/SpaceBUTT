@@ -27,3 +27,32 @@ C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceB
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Ship1.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Asteroid.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\EnemyShip.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Healthbar1.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\effects.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.exe
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.pdb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.csprojResolveAssemblyReference.cache
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.exe
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.pdb
