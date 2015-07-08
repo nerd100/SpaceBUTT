@@ -19,13 +19,20 @@ namespace SpaceBUTT
         public List<Laser> laser = new List<Laser>();
         public List<EnemyLaser> enemyLaser = new List<EnemyLaser>();
         Random rnd = new Random();
-
+        private int direction = 50;
 
         public void LoadContent(ContentManager Content, Vector3 modelPos)
         {
             Model bullet = Content.Load<Model>("Laser");
+            
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X+500,modelPos.Y,modelPos.Z)));
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X-500, modelPos.Y, modelPos.Z)));
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X + 300, modelPos.Y, modelPos.Z)));
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X - 300, modelPos.Y, modelPos.Z)));
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X + 100, modelPos.Y, modelPos.Z)));
+            laser.Add(new Laser(bullet, new Vector3(modelPos.X - 100, modelPos.Y, modelPos.Z)));
+            
 
-            laser.Add(new Laser(bullet, modelPos));
         }
 
 
@@ -125,7 +132,7 @@ namespace SpaceBUTT
 
             for (int i = 0; i < laser.Count(); i++)
             {
-                laser[i].Draw(Projection, View);
+                laser[i].Draw(Projection, View);       
             }
 
             for (int i = 0; i < enemies.Count(); i++)

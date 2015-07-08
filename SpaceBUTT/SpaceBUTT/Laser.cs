@@ -15,9 +15,8 @@ namespace SpaceBUTT
     {
         public Model laser;     
         public Vector3 laserPos;
-      
         private int laserSpeed;
-
+ 
        
 
         public Laser(Model m,Vector3 ePos)
@@ -25,16 +24,16 @@ namespace SpaceBUTT
             laserPos = ePos;
             laser = m;
             laserSpeed = 500;
+       
         }
 
        
 
         
         public void Update(GameTime gameTime)
-        {
-
+        { 
+        
             laserPos.Z -= laserSpeed;
-
             getBoundingSphere();
 
         }
@@ -66,7 +65,7 @@ namespace SpaceBUTT
                 {
                     
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateScale(5)      
+                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateScale(5)
                          * Matrix.CreateTranslation(laserPos);
                     effect.View = View;
                     effect.Projection = Projection;
@@ -75,6 +74,6 @@ namespace SpaceBUTT
             }
 
         }
-
+   
     }
 }
