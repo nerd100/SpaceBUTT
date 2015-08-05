@@ -34,6 +34,7 @@ namespace SpaceBUTT
         { 
         
             laserPos.Z -= laserSpeed;
+            
             getBoundingSphere();
 
         }

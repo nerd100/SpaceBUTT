@@ -45,15 +45,14 @@ namespace SpaceBUTT
 
           
             shoot1.Update(gameTime, Content, PlayerPos);
-            EnemyPos.Z += EnemySpeed;
-          //  EnemyPos.Y += ;
+            EnemyPos.Z += EnemySpeed;  
             shootTimer++;
            
         }
 
         public void Shoot(ContentManager Content, Vector3 EnemyPos, Vector3 PlayerPos)
         {
-            shoot1.LoadContent3(Content, EnemyPos, PlayerPos);
+            shoot1.EnemyLaser(Content, EnemyPos, PlayerPos);
         }
 
 

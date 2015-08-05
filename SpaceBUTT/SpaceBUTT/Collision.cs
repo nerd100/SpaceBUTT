@@ -10,10 +10,14 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 namespace SpaceBUTT
 {
-    class Collision
+    class Collision : Microsoft.Xna.Framework.Game
     {
-        public void Update(GameTime gameTime, Player player, Spawn spawn, HUD hud)
+        public int killedEnemies;
+        Boss1 boss1 = new Boss1();
+        public void Update(GameTime gameTime, Player player, Spawn spawn, HUD hud, int killedEnemies)
         {
+            this.killedEnemies = killedEnemies;
+            
 
             collisionCheckPlayerAsteroid(player.getBoundingSphere(), spawn, hud,player);
 
@@ -27,10 +31,30 @@ namespace SpaceBUTT
                 collisionCheckLaserEnemy(player.shoot.laser[j].getBoundingSphere(), spawn, hud);
             }
 
+            for (int j = 0; j < player.shoot.laser.Count(); j++)
+            {
+                collisionCheckLaserBoss1(player.shoot.laser[j].getBoundingSphere(), spawn, hud);
+            }
+            collisionCheckBossLaserPlayer(player.getBoundingSphere(), spawn, hud, player);
+
             collisionCheckEnemyLaserPlayer(player.getBoundingSphere(), spawn, hud, player);
             
 
             collisionCheckPlayerEnemy(player.getBoundingSphere(), spawn, hud, player);
+            
+        }
+
+        public bool collisionCheckBossLaserPlayer(BoundingSphere sphere,Spawn spawn, HUD hud, Player player){
+            for (int i = 0; i < spawn.boss1.Count(); i++)
+                for (int j = 0; j < spawn.boss1[i].shoot3.boss1Laser.Count(); j++)
+                    if (spawn.boss1[i].shoot3.boss1Laser[j].getBoundingSphere().Intersects(sphere))
+                    {
+                        player.playerHealth -= 5;
+                        hud.rectangle.Width = (int)(300 * (player.playerHealth / 100));
+                        spawn.boss1[i].shoot3.boss1Laser.RemoveAt(j);
+                    }
+            
+            return true;
         }
 
         public bool collisionCheckPlayerAsteroid(BoundingSphere sphere, Spawn spawn, HUD hud,Player player)
@@ -46,12 +70,32 @@ namespace SpaceBUTT
             return true;
         }
 
+        public bool collisionCheckLaserBoss1(BoundingSphere sphere, Spawn spawn, HUD hud)
+        {
+            for (int i = 0; i < spawn.boss1.Count(); i++)
+                if (spawn.boss1[i].getBoundingSphere().Intersects(sphere))
+                {
+                    if (boss1.getBossLife() <= 0f)
+                    {
+                        spawn.boss1.RemoveAt(i);
+                    }
+                    else
+                    {
+                        boss1.setBosslife(boss1.getBossLife() - 0.01f);
+                        hud.rectangleBoss.Width = (int)(700*((boss1.getBossLife()/100)));
+                    }
+                        
+                }
+            return true;
+        }
+
         public bool collisionCheckLaserAsteroid(BoundingSphere sphere, Spawn spawn, HUD hud)
         {
             for (int i = 0; i < spawn.asteroid.Count(); i++)
                 if (spawn.asteroid[i].getBoundingSphere().Intersects(sphere))
                 {
                     spawn.asteroid.RemoveAt(i);
+                    Boss1 bosslife;
                 }
             return true;
         }
@@ -61,7 +105,9 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.enemies.Count(); i++)
                 if (spawn.enemies[i].getBoundingSphere().Intersects(sphere))
                 {  
-                        spawn.enemies.RemoveAt(i);                                            
+                        spawn.enemies.RemoveAt(i);
+                        killedEnemies++;
+                                
                 }
             return true;
         }
@@ -89,6 +135,11 @@ namespace SpaceBUTT
                         spawn.enemies[i].shoot1.enemyLaser.RemoveAt(j);
                     }
             return true;
+        }
+
+        public int IncrementkilledEnemie() {
+            
+            return killedEnemies;
         }
     }
 }

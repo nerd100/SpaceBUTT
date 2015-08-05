@@ -2,160 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Ship1.fbx</Source>
-      <Name>Ship1</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Ship1.xnb</Output>
-      <Time>2015-05-26T23:30:02.019+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Ship1_0.xml</Key>
-        <Value>2015-05-26T23:33:24.411+02:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Ship1.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Ship1_0.xml</Output>
-      <Time>2015-05-26T23:30:02.019+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Crosshair.fbx</Source>
-      <Name>Crosshair</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb</Output>
-      <Time>2015-06-03T01:07:29.955+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Crosshair_0.xml</Key>
-        <Value>2015-06-03T01:09:14.022+02:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Crosshair.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Crosshair_0.xml</Output>
-      <Time>2015-06-03T01:07:29.955+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Asteroid.fbx</Source>
-      <Name>Asteroid</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Asteroid.xnb</Output>
-      <Time>2015-06-06T21:50:04.798+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Asteroid_0.xml</Key>
-        <Value>2015-06-06T21:56:04.203+02:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Asteroid.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Asteroid_0.xml</Output>
-      <Time>2015-06-06T21:50:04.798+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Laser.fbx</Source>
-      <Name>Laser</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Laser.xnb</Output>
-      <Time>2015-06-11T03:36:46.7+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Laser_0.xml</Key>
-        <Value>2015-06-11T03:43:44.974+02:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Laser.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Laser_0.xml</Output>
-      <Time>2015-06-11T03:36:46.7+02:00</Time>
-    </Item>
-    <Item>
-      <Source>LaserSound.mp3</Source>
-      <Name>LaserSound</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.xnb</Output>
-      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma</Extra>
-      <Time>2015-06-12T16:19:35.2708+02:00</Time>
-    </Item>
-    <Item>
-      <Source>georgia.spritefont</Source>
-      <Name>georgia</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb</Output>
-      <Time>2015-06-14T14:20:08.694+02:00</Time>
-    </Item>
-    <Item>
-      <Source>skybox.x</Source>
-      <Name>skybox</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox.xnb</Output>
-      <Time>2015-06-29T18:23:05.146+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\skybox_0.xml</Key>
-        <Value>2015-06-29T18:23:07.006+02:00</Value>
-      </Dependency>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb</Request>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb</Request>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb</Request>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb</Request>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb</Request>
-      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>skybox.x</Source>
-      <Importer>XImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\skybox_0.xml</Output>
-      <Time>2015-06-29T18:23:05.146+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Healthbar1.jpg</Source>
-      <Name>Healthbar1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Healthbar1.xnb</Output>
-      <Time>2015-06-16T18:54:26.651+02:00</Time>
-    </Item>
-    <Item>
-      <Source>EnemyShip.fbx</Source>
-      <Name>EnemyShip</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\EnemyShip.xnb</Output>
-      <Time>2015-06-18T17:52:07.123+02:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\EnemyShip_0.xml</Key>
-        <Value>2015-06-18T18:00:29.82+02:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>EnemyShip.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\EnemyShip_0.xml</Output>
-      <Time>2015-06-18T17:52:07.123+02:00</Time>
-    </Item>
-    <Item>
       <Source>effects.fx</Source>
       <Name>effects</Name>
       <Importer>EffectImporter</Importer>
@@ -165,61 +11,233 @@
       <Time>2015-06-28T19:28:47.232+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_bk.tga</Source>
-      <Name>purplenebula_bk</Name>
+      <Source>UI\georgia.spritefont</Source>
+      <Name>UI\georgia</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\georgia.xnb</Output>
+      <Time>2015-07-27T20:21:49.348+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\exit.png</Source>
+      <Name>Menü\exit</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\exit.xnb</Output>
+      <Time>2015-07-27T20:19:22.066+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_dn.tga</Source>
-      <Name>purplenebula_dn</Name>
+      <Source>Menü\Healthbar1.jpg</Source>
+      <Name>Menü\Healthbar1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Healthbar1.xnb</Output>
+      <Time>2015-07-27T20:19:22.074+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_ft.tga</Source>
-      <Name>purplenebula_ft</Name>
+      <Source>Menü\loading.png</Source>
+      <Name>Menü\loading</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loading.xnb</Output>
+      <Time>2015-07-27T20:19:22.083+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_lf.tga</Source>
-      <Name>purplenebula_lf</Name>
+      <Source>Menü\orb.png</Source>
+      <Name>Menü\orb</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\orb.xnb</Output>
+      <Time>2015-07-27T20:19:22.092+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_rt.tga</Source>
-      <Name>purplenebula_rt</Name>
+      <Source>Menü\pause.png</Source>
+      <Name>Menü\pause</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause.xnb</Output>
+      <Time>2015-07-27T20:19:22.1+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_up.tga</Source>
-      <Name>purplenebula_up</Name>
+      <Source>Menü\resume.png</Source>
+      <Name>Menü\resume</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\resume.xnb</Output>
+      <Time>2015-07-27T20:19:22.109+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_up.tga</Source>
+      <Source>Menü\start.png</Source>
+      <Name>Menü\start</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\start.xnb</Output>
+      <Time>2015-07-27T20:19:22.117+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_bk.tga</Source>
+      <Name>Sky\purplenebula_bk</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk.xnb</Output>
+      <Time>2015-07-27T20:20:05.581+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_dn.tga</Source>
+      <Name>Sky\purplenebula_dn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn.xnb</Output>
+      <Time>2015-07-27T20:20:05.618+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_ft.tga</Source>
+      <Name>Sky\purplenebula_ft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft.xnb</Output>
+      <Time>2015-07-27T20:20:05.645+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_lf.tga</Source>
+      <Name>Sky\purplenebula_lf</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf.xnb</Output>
+      <Time>2015-07-27T20:20:05.709+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_rt.tga</Source>
+      <Name>Sky\purplenebula_rt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt.xnb</Output>
+      <Time>2015-07-27T20:20:05.725+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_up.tga</Source>
+      <Name>Sky\purplenebula_up</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up.xnb</Output>
+      <Time>2015-07-27T20:20:05.759+02:00</Time>
+    </Item>
+    <Item>
+      <Source>UI\Healthbar1.jpg</Source>
+      <Name>UI\Healthbar1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\Healthbar1.xnb</Output>
+      <Time>2015-07-27T20:21:49.353+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\skybox.x</Source>
+      <Name>Sky\skybox</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\skybox.xnb</Output>
+      <Time>2015-07-27T20:20:05.783+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Sky\skybox_0.xml</Key>
+        <Value>2015-07-27T20:24:11.892+02:00</Value>
+      </Dependency>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk_0.xnb</Request>
+      <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Model\Asteroid.fbx</Source>
+      <Name>Model\Asteroid</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Asteroid.xnb</Output>
+      <Time>2015-07-27T20:20:39.26+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\Asteroid_0.xml</Key>
+        <Value>2015-07-27T20:24:13.179+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Model\Crosshair.fbx</Source>
+      <Name>Model\Crosshair</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Crosshair.xnb</Output>
+      <Time>2015-07-27T20:20:39.282+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\Crosshair_0.xml</Key>
+        <Value>2015-07-27T20:24:13.268+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Model\EnemyShip.fbx</Source>
+      <Name>Model\EnemyShip</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\EnemyShip.xnb</Output>
+      <Time>2015-07-27T20:20:39.298+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\EnemyShip_0.xml</Key>
+        <Value>2015-07-27T20:24:13.337+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Model\Laser.fbx</Source>
+      <Name>Model\Laser</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Laser.xnb</Output>
+      <Time>2015-07-27T20:20:39.314+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\Laser_0.xml</Key>
+        <Value>2015-07-27T20:24:13.409+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Model\Ship1.fbx</Source>
+      <Name>Model\Ship1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Ship1.xnb</Output>
+      <Time>2015-07-27T20:20:39.351+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\Ship1_0.xml</Key>
+        <Value>2015-07-27T20:24:13.514+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Sky\skybox.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Sky\skybox_0.xml</Output>
+      <Time>2015-07-27T20:20:05.783+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sky\purplenebula_up.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -231,11 +249,11 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.759+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_rt.tga</Source>
+      <Source>Sky\purplenebula_rt.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -247,11 +265,11 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.725+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_lf.tga</Source>
+      <Source>Sky\purplenebula_lf.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -263,11 +281,11 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.709+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_ft.tga</Source>
+      <Source>Sky\purplenebula_ft.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -279,11 +297,11 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.645+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_bk.tga</Source>
+      <Source>Sky\purplenebula_bk.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -295,11 +313,11 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.581+02:00</Time>
     </Item>
     <Item>
-      <Source>purplenebula_dn.tga</Source>
+      <Source>Sky\purplenebula_dn.tga</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -311,8 +329,63 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb</Output>
-      <Time>2002-03-13T11:37:06+01:00</Time>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn_0.xnb</Output>
+      <Time>2015-07-27T20:20:05.618+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\Asteroid.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\Asteroid_0.xml</Output>
+      <Time>2015-07-27T20:20:39.26+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\Crosshair.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\Crosshair_0.xml</Output>
+      <Time>2015-07-27T20:20:39.282+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\EnemyShip.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\EnemyShip_0.xml</Output>
+      <Time>2015-07-27T20:20:39.298+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\Laser.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\Laser_0.xml</Output>
+      <Time>2015-07-27T20:20:39.314+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\Ship1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\Ship1_0.xml</Output>
+      <Time>2015-07-27T20:20:39.351+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Model\Boss1.fbx</Source>
+      <Name>Model\Boss1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Boss1.xnb</Output>
+      <Time>2015-07-27T20:43:53.307+02:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Model\Boss1_0.xml</Key>
+        <Value>2015-07-27T21:08:50.294+02:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Model\Boss1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Model\Boss1_0.xml</Output>
+      <Time>2015-07-27T20:43:53.307+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

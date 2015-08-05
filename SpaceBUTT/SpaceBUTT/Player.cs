@@ -40,7 +40,7 @@ namespace SpaceBUTT
 
         public void LoadContent(ContentManager Content)
         {   
-            myModel = Content.Load<Model>("Ship1");            
+            myModel = Content.Load<Model>("Model/Ship1");            
         }
 
 
@@ -114,7 +114,7 @@ namespace SpaceBUTT
                  if (currentState.IsButtonDown(Buttons.A) && shootTimer >= shootTime)
                  {
                      shootTimer = 0;
-                     shoot.LoadContent(Content, modelPosition);
+                     shoot.Laser(Content, modelPosition);
 
                  }
 
@@ -168,7 +168,7 @@ namespace SpaceBUTT
                 if (stat.IsKeyDown(Keys.Space) && shootTimer >= shootTime)
                 {
                     shootTimer = 0;
-                    shoot.LoadContent(Content, modelPosition);
+                    shoot.Laser(Content, modelPosition);
                     
 
                 }

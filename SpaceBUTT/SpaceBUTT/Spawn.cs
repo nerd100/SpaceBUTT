@@ -13,32 +13,40 @@ using Microsoft.Xna.Framework.Media;
 namespace SpaceBUTT
 {   
     public class Spawn
-    {
+    {  
         public List<Asteroid> asteroid = new List<Asteroid>();
         public List<EnemyShip> enemies = new List<EnemyShip>();
         public List<Laser> laser = new List<Laser>();
         public List<EnemyLaser> enemyLaser = new List<EnemyLaser>();
+        public List<Boss1> boss1 = new List<Boss1>();
+        public List<Boss1Laser> boss1Laser = new List<Boss1Laser>();
+        bool wall = true;
+
+        int spawnTimer = 0;
+        int spawnTime = 100;
+      //  public Boss1 boss1 = new Boss1(m,Vector3.Zero);
+
         Random rnd = new Random();
-        private int direction = 50;
 
-        public void LoadContent(ContentManager Content, Vector3 modelPos)
+        public void Boss1(ContentManager Content)
         {
-            Model bullet = Content.Load<Model>("Laser");
-            
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X+500,modelPos.Y,modelPos.Z)));
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X-500, modelPos.Y, modelPos.Z)));
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X + 300, modelPos.Y, modelPos.Z)));
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X - 300, modelPos.Y, modelPos.Z)));
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X + 100, modelPos.Y, modelPos.Z)));
-            laser.Add(new Laser(bullet, new Vector3(modelPos.X - 100, modelPos.Y, modelPos.Z)));
-            
-
+            Model Boss1Model = Content.Load<Model>("Model/Boss1");
+            boss1.Add(new Boss1(Boss1Model, new Vector3 (0,0,-100000)));
         }
 
+        public void Laser(ContentManager Content, Vector3 modelPos)
+        {
+            Model bullet = Content.Load<Model>("Model/Laser");
 
-        public void LoadContent1(ContentManager Content)
+                laser.Add(new Laser(bullet, new Vector3(modelPos.X + 300, modelPos.Y, modelPos.Z)));
+                laser.Add(new Laser(bullet, new Vector3(modelPos.X - 300, modelPos.Y, modelPos.Z)));
+                laser.Add(new Laser(bullet, new Vector3(modelPos.X, modelPos.Y + 300, modelPos.Z)));
+                laser.Add(new Laser(bullet, new Vector3(modelPos.X, modelPos.Y - 300, modelPos.Z)));  
+        }
+
+        public void Asteroid(ContentManager Content)
         {           
-            Model asteroiden = Content.Load<Model>("Asteroid");
+            Model asteroiden = Content.Load<Model>("Model/Asteroid");
 
             int x = rnd.Next(-10000, 10000);
             int y = rnd.Next(-10000, 10000);
@@ -46,9 +54,9 @@ namespace SpaceBUTT
 
         }
 
-        public void LoadContent2(ContentManager Content)
+        public void EnemyShip(ContentManager Content)
         {
-            Model enemy = Content.Load<Model>("EnemyShip");
+            Model enemy = Content.Load<Model>("Model/EnemyShip");
 
             int x = rnd.Next(-2000, 2000);
             int y = rnd.Next(-2000, 2000);
@@ -56,17 +64,43 @@ namespace SpaceBUTT
 
         }
 
-        public void LoadContent3(ContentManager Content, Vector3 EnemyPos, Vector3 PlayerPos)
+        public void EnemyLaser(ContentManager Content, Vector3 EnemyPos, Vector3 PlayerPos)
         {
-            Model bullet2 = Content.Load<Model>("Laser");
+            Model bullet2 = Content.Load<Model>("Model/Laser");
 
             enemyLaser.Add(new EnemyLaser(bullet2, EnemyPos, PlayerPos));
         }
 
+        public void Boss1Laser(ContentManager Content, Vector3 Boss1Pos, Vector3 PlayerPos)
+        {
+            Model bullet3 = Content.Load<Model>("Model/Laser");
+            if (Boss1Pos.Z >= -50000)
+            {
+                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X, Boss1Pos.Y, Boss1Pos.Z), new Vector3(PlayerPos.X, PlayerPos.Y, PlayerPos.Z)));
+                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + 2000, Boss1Pos.Y, Boss1Pos.Z), new Vector3(PlayerPos.X + 500, PlayerPos.Y, PlayerPos.Z)));
+                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X - 2000, Boss1Pos.Y, Boss1Pos.Z), new Vector3(PlayerPos.X - 500, PlayerPos.Y, PlayerPos.Z)));
+                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X, Boss1Pos.Y + 2000, Boss1Pos.Z), new Vector3(PlayerPos.X, PlayerPos.Y + 500, PlayerPos.Z)));
+                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X, Boss1Pos.Y - 2000, Boss1Pos.Z), new Vector3(PlayerPos.X, PlayerPos.Y - 500, PlayerPos.Z)));
+            }
+            else  if (spawnTimer > spawnTime)
+                {
+                    spawnTimer = 0;
+ 
+                for (int i = -5000; i < 5000; i += 1500)
+                {
+                    for (int j = -2000; j < 2000;j += 500)
+                    {
+                        boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                       
+                    }
+                }
+                
+            }
+        }
 
         public void Update(GameTime gameTime, ContentManager Content, Vector3 PlayerPos)
         {
-            
+            spawnTimer++;
             for (int i = 0; i < asteroid.Count(); i++)
             {
                 asteroid[i].Update(gameTime);
@@ -98,6 +132,7 @@ namespace SpaceBUTT
             {
                 laser[i].Update(gameTime);
             }
+
             //delete Laser
             for (int j = 0; j < laser.Count(); j++)
             {
@@ -106,10 +141,22 @@ namespace SpaceBUTT
                     laser.RemoveAt(j);
                 }
             }
+            for (int j = 0; j < boss1Laser.Count(); j++)
+            {
+                if (boss1Laser[j].Boss1LaserPos.Z >= 5000)
+                {
+                    boss1Laser.RemoveAt(j);
+                }
+            }
 
             for (int i = 0; i < enemyLaser.Count(); i++)
             {
                 enemyLaser[i].Update(gameTime);
+            }
+
+            for (int i = 0; i < boss1Laser.Count(); i++)
+            {
+                boss1Laser[i].Update(gameTime);
             }
 
             for (int j = 0; j < enemyLaser.Count(); j++)
@@ -119,6 +166,11 @@ namespace SpaceBUTT
                     enemyLaser.RemoveAt(j);
                 }
             }
+            for (int j = 0; j < boss1.Count(); j++)
+            {
+                boss1[j].Update(gameTime,Content,PlayerPos);
+            }
+           
 
 
         }
@@ -143,7 +195,15 @@ namespace SpaceBUTT
             {
                 enemyLaser[i].Draw(Projection, View);
             }
-
+            for (int i = 0; i < boss1.Count(); i++)
+            {
+                boss1[i].Draw(Projection, View);
+            }
+            for (int i = 0; i < boss1Laser.Count(); i++)
+            {
+                boss1Laser[i].Draw(Projection, View);
+            }
+            
         }
     }
 }

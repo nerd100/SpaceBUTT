@@ -4,26 +4,61 @@ C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceB
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.exe
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.pdb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Ship1.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Asteroid.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Laser.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Healthbar1.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\EnemyShip.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\effects.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb
-C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Ship1.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Crosshair.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Asteroid.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Laser.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\EnemyShip.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\georgia.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Healthbar1.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\skybox.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\effects.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_up_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_rt_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_lf_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_ft_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_bk_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\purplenebula_dn_0.xnb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\LaserSound.wma
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.exe
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.pdb
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.csprojResolveAssemblyReference.cache
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.exe
+C:\Users\Alexander\Desktop\nächster versuch\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.pdb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\georgia.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\exit.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Healthbar1.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loading.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\orb.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\resume.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\start.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\Healthbar1.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\skybox.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Asteroid.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Crosshair.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\EnemyShip.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Laser.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Ship1.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn_0.xnb
+C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Boss1.xnb

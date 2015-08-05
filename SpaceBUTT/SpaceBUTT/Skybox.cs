@@ -40,7 +40,7 @@ namespace SpaceBUTT
        public void LoadContent(ContentManager Content, Effect effect)
        {
 
-           skyboxModel = LoadModel("skybox", out skyboxTextures, Content, effect);
+           skyboxModel = LoadModel("Sky/skybox", out skyboxTextures, Content, effect);
 
           
        }

@@ -32,7 +32,7 @@ namespace SpaceBUTT
 
         public void LoadContent(ContentManager Content)
         {          
-            crosshair = Content.Load<Model>("Crosshair");   
+            crosshair = Content.Load<Model>("Model/Crosshair");   
         }
 
         public void Update(GameTime gameTime)
