@@ -21,12 +21,13 @@ namespace SpaceBUTT
         public List<Boss1> boss1 = new List<Boss1>();
         public List<Boss1Laser> boss1Laser = new List<Boss1Laser>();
         bool wall = true;
-
+        
         int spawnTimer = 0;
-        int spawnTime = 100;
+        int spawnTime = 50;
       //  public Boss1 boss1 = new Boss1(m,Vector3.Zero);
 
         Random rnd = new Random();
+        Random rnd1 = new Random();
 
         public void Boss1(ContentManager Content)
         {
@@ -84,17 +85,106 @@ namespace SpaceBUTT
             }
             else  if (spawnTimer > spawnTime)
                 {
+                    int random = rnd1.Next(1,5);
                     spawnTimer = 0;
- 
-                for (int i = -5000; i < 5000; i += 1500)
-                {
-                    for (int j = -2000; j < 2000;j += 500)
+                    if (random == 1)
                     {
-                        boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
-                       
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
                     }
-                }
-                
+
+                    if (random == 2)
+                    {
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                    }
+
+                    if (random == 3)
+                    {
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                    }
+                    if (random == 4)
+                    {
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = 0; j < 3000; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = -3000; i < 0; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                        for (int i = 0; i < 3000; i += 300)
+                        {
+                            for (int j = -3000; j < 0; j += 300)
+                            {
+                                boss1Laser.Add(new Boss1Laser(bullet3, new Vector3(Boss1Pos.X + i, Boss1Pos.Y + j, Boss1Pos.Z), wall));
+                            }
+                        }
+                    }          
             }
         }
 

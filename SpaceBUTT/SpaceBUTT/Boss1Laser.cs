@@ -39,8 +39,7 @@ namespace SpaceBUTT
         {
             if (wall == true)
             {
-                    Boss1LaserPos.Z += 500;
-                  
+                    Boss1LaserPos.Z += 1000;        
             }
             else
             {
