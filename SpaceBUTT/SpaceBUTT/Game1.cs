@@ -23,12 +23,13 @@ namespace SpaceBUTT
             Playing,
             Paused
         }
-    
+        private Texture2D background;
         private Texture2D startButton;
         private Texture2D exitButton;
         private Texture2D pauseButton;
         private Texture2D resumeButton;
         private Texture2D loadingScreen;
+        private Vector2 backgroundPosition;
         private Vector2 startButtonPosition;
         private Vector2 exitButtonPosition;
         private Vector2 resumeButtonPosition;
@@ -86,9 +87,10 @@ namespace SpaceBUTT
             graphics.ApplyChanges();
 
             //menu.Initialize(IsMouseVisible,GraphicsDevice.Viewport.Width);
+
             startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 430);  
-    
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 430);
+            backgroundPosition = new Vector2(0,0); 
             gameState = GameState.StartMenu;
 
             //get the mouse state
@@ -120,7 +122,7 @@ namespace SpaceBUTT
             //load the buttonimages into the content pipeline
             startButton = Content.Load<Texture2D>(@"Menü/StartButton");
             exitButton = Content.Load<Texture2D>(@"Menü/exit");
-
+            background = Content.Load<Texture2D>(@"Menü/background");
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>(@"Menü/loading");
         }
@@ -246,9 +248,11 @@ namespace SpaceBUTT
 
             spriteBatch.Begin();
             if (gameState == GameState.StartMenu)
-            {               
+            {
+                spriteBatch.Draw(background, backgroundPosition, Color.White);
                 spriteBatch.Draw(startButton, startButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
+               
                 
             }
 

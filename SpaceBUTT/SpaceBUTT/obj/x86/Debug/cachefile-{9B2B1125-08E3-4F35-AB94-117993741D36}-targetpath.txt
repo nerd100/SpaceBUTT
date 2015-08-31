@@ -31,3 +31,4 @@ Content\Menü\StartButton.xnb
 Content\Menü\healtbar2.xnb
 Content\UI\healtbar2.xnb
 Content\UI\healtbar3.xnb
+Content\Menü\background.xnb
