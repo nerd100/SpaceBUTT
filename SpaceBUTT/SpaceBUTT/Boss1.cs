@@ -16,21 +16,20 @@ namespace SpaceBUTT
     public class Boss1
     {
         public Model Boss1Model;
-        public Vector3 Boss1Pos;
-        public int Boss1Speed;
+        public Vector3 Boss1Pos; 
         public float BossRotation = 0;
         public Spawn shoot3 = new Spawn();
-        public float bosslife = 100.0f;
-        int shootTime = 10;
+        
+        int shootTime = 0;
         int shootTimer = 0;
+        private int BossSpeed = 200;
 
-        public float getBossLife(){
-            return bosslife;       
+        private float _Bosslife = 100.0f;
+        public float BossLife{
+            get{ return _Bosslife;  }
+            set { _Bosslife = value; }
         }
-        public void setBosslife(float bosslife) {
-            this.bosslife = bosslife;
-        }
-
+        
         public Boss1() 
         { 
         }
@@ -44,9 +43,9 @@ namespace SpaceBUTT
 
         public void Update(GameTime gameTime , ContentManager Content, Vector3 PlayerPos)
         {
-            if (Boss1Pos.Z <= -5000)
+            if (Boss1Pos.Z <= -20000)
             {
-                Boss1Pos.Z += 50;
+                Boss1Pos.Z += BossSpeed;
 
             }
             BossRotation += 0.01f;
@@ -81,7 +80,7 @@ namespace SpaceBUTT
 
             sphere.Center = Boss1Pos;
 
-            sphere.Radius *= 50.0f;
+            sphere.Radius *= 20.0f;
             return sphere;
         }
 
@@ -99,8 +98,8 @@ namespace SpaceBUTT
                 {
 
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(270))* Matrix.CreateRotationZ(BossRotation)
-                        * Matrix.CreateScale(20) * Matrix.CreateTranslation(Boss1Pos);
+                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(270)) * Matrix.CreateRotationZ(BossRotation)
+                        * Matrix.CreateRotationX(BossRotation) * Matrix.CreateRotationY(BossRotation) * Matrix.CreateScale(20) * Matrix.CreateTranslation(Boss1Pos);
                     effect.View = View;
                     effect.Projection = Projection;
                 }

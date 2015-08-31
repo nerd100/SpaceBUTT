@@ -86,8 +86,8 @@ namespace SpaceBUTT
             graphics.ApplyChanges();
 
             //menu.Initialize(IsMouseVisible,GraphicsDevice.Viewport.Width);
-            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 50, 200);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 50, 250);  
+            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 430);  
     
             gameState = GameState.StartMenu;
 
@@ -118,7 +118,7 @@ namespace SpaceBUTT
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //load the buttonimages into the content pipeline
-            startButton = Content.Load<Texture2D>(@"Menü/start");
+            startButton = Content.Load<Texture2D>(@"Menü/StartButton");
             exitButton = Content.Load<Texture2D>(@"Menü/exit");
 
             //load the loading screen
@@ -151,7 +151,7 @@ namespace SpaceBUTT
             }
 
 
-            if (player.playerHealth <= 0)
+            if (player.PlayerHealth <= 0)
             {
                 isPlayerDead = true;
                 reset();
@@ -209,8 +209,8 @@ namespace SpaceBUTT
                     collision.Update(gameTime, player, spawn, hud, killedEnemies);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
-                    spawn.Update(gameTime, Content, player.modelPosition);
-                    hud.Update(gameTime, player.modelPosition, spawn.asteroid.Count() + spawn.enemies.Count(),spawnBoss);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
+                    hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
 
                     spawnTimer++;
                     spawnEnemyTimer++;
@@ -346,8 +346,8 @@ namespace SpaceBUTT
         void reset()
         {
             gameState = GameState.StartMenu;
-            player.modelPosition = Vector3.Zero;
-            player.playerHealth = 100.0f;
+            player.PlayerPosition = Vector3.Zero;
+            player.PlayerHealth = 100.0f;
             spawnEnemyTime = 50;
             while (spawn.asteroid.Count() != 0 || spawn.enemies.Count() !=0 || spawn.boss1.Count() != 0)
             {

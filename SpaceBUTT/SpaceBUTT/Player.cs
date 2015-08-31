@@ -16,25 +16,28 @@ namespace SpaceBUTT
     {
         Model myModel;
         public Spawn shoot = new Spawn();
+        public Vector3 PlayerPosition = new Vector3(0, 0, 0);
 
         int shootTime = 10;
         int shootTimer = 0;
 
-        public Vector3 modelPosition = new Vector3(0, 0, 0);
         Vector3 modelVelocity = new Vector3(0, 0, 0);
         float modelRotationZ = 0.0f;
         float modelRotationX = 0.0f;
         float modelSpeed = 7.0f;
-        public float playerHealth = 100.0f;
 
         bool BarrelRoll = true;
         int BarrelRollTimer = 0;
         int BarrelRollTime = 120;
 
-       
-
         float screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
         float screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+
+        private float _PlayerHealth = 100.0f;
+        public float PlayerHealth{
+            get { return _PlayerHealth; }
+            set { _PlayerHealth = value; }
+        }
 
 
 
@@ -55,7 +58,7 @@ namespace SpaceBUTT
             }
 
 
-            modelPosition += modelVelocity;
+            PlayerPosition += modelVelocity;
 
             UpdateInput(Content,asteroids,enemies);
 
@@ -64,7 +67,7 @@ namespace SpaceBUTT
             modelRotationZ *= 0.95f;
 
             getBoundingSphere();
-            shoot.Update(gameTime,Content,modelPosition);
+            shoot.Update(gameTime, Content, PlayerPosition);
             shootTimer++;
 
            
@@ -114,7 +117,7 @@ namespace SpaceBUTT
                  if (currentState.IsButtonDown(Buttons.A) && shootTimer >= shootTime)
                  {
                      shootTimer = 0;
-                     shoot.Laser(Content, modelPosition);
+                     shoot.Laser(Content, PlayerPosition);
 
                  }
 
@@ -168,7 +171,7 @@ namespace SpaceBUTT
                 if (stat.IsKeyDown(Keys.Space) && shootTimer >= shootTime)
                 {
                     shootTimer = 0;
-                    shoot.Laser(Content, modelPosition);
+                    shoot.Laser(Content, PlayerPosition);
                     
 
                 }
@@ -182,21 +185,21 @@ namespace SpaceBUTT
                 
             }
             //screensize TODO: Was anderes überlegen!
-            if (modelPosition.Y >= screenHeight + 900)
+            if (PlayerPosition.Y >= screenHeight + 900)
             {
-                modelPosition.Y = screenHeight + 900;
+                PlayerPosition.Y = screenHeight + 900;
             }
-            if (modelPosition.Y <= -(screenHeight + 900))
+            if (PlayerPosition.Y <= -(screenHeight + 900))
             {
-                modelPosition.Y = -(screenHeight + 900);
+                PlayerPosition.Y = -(screenHeight + 900);
             }
-            if (modelPosition.X >= screenWidth + 1000)
+            if (PlayerPosition.X >= screenWidth + 1000)
             {
-                modelPosition.X = screenWidth + 1000;
+                PlayerPosition.X = screenWidth + 1000;
             }
-            if (modelPosition.X <= -(screenWidth + 1000))
+            if (PlayerPosition.X <= -(screenWidth + 1000))
             {
-                modelPosition.X = -(screenWidth + 1000);
+                PlayerPosition.X = -(screenWidth + 1000);
             }
         }
 
@@ -213,7 +216,7 @@ namespace SpaceBUTT
                     sphere = BoundingSphere.CreateMerged(sphere, mesh.BoundingSphere);
             }
 
-            sphere.Center = modelPosition;
+            sphere.Center = PlayerPosition;
 
             sphere.Radius *= 0.5f;
             return sphere;
@@ -236,7 +239,7 @@ namespace SpaceBUTT
                 {
                     effect.EnableDefaultLighting();
                     effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(180)) * Matrix.CreateRotationX(modelRotationX)
-                        * Matrix.CreateRotationZ(modelRotationZ) * Matrix.CreateTranslation(modelPosition);
+                        * Matrix.CreateRotationZ(modelRotationZ) * Matrix.CreateTranslation(PlayerPosition);
                     effect.View = View;
                     effect.Projection = Projection;
                 }

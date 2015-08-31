@@ -387,6 +387,42 @@
       <Output>obj\x86\Debug\Model\Boss1_0.xml</Output>
       <Time>2015-07-27T20:43:53.307+02:00</Time>
     </Item>
+    <Item>
+      <Source>Menü\StartButton.jpg</Source>
+      <Name>Menü\StartButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\StartButton.xnb</Output>
+      <Time>2015-08-31T18:04:01.5822+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\healtbar2.jpg</Source>
+      <Name>Menü\healtbar2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\healtbar2.xnb</Output>
+      <Time>2015-08-31T18:05:55.5132+02:00</Time>
+    </Item>
+    <Item>
+      <Source>UI\healtbar2.jpg</Source>
+      <Name>UI\healtbar2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar2.xnb</Output>
+      <Time>2015-08-31T18:07:17.6982+02:00</Time>
+    </Item>
+    <Item>
+      <Source>UI\healtbar3.jpg</Source>
+      <Name>UI\healtbar3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar3.xnb</Output>
+      <Time>2015-08-31T18:21:59.4382+02:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

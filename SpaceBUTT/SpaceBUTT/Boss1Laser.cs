@@ -15,7 +15,7 @@ namespace SpaceBUTT
         public Model Laser;
         public Vector3 Boss1LaserPos;
         bool wall;
-        private int EnemyLaserSpeed=300;
+        private int EnemyLaserSpeed=600;
       
         public Vector3 PlayerPosition;
         Random rnd = new Random();
@@ -25,7 +25,7 @@ namespace SpaceBUTT
             Boss1LaserPos = ePos;
             Laser = m;
             PlayerPosition = PlayerPos;
-            this.p = rnd.Next(-100, 100);
+            this.p = rnd.Next(-100, +100);
         }
 
         public Boss1Laser(Model m, Vector3 ePos,bool wall)
@@ -39,7 +39,7 @@ namespace SpaceBUTT
         {
             if (wall == true)
             {
-                    Boss1LaserPos.Z += 1000;        
+                    Boss1LaserPos.Z += 800;        
             }
             else
             {
@@ -54,8 +54,8 @@ namespace SpaceBUTT
                     z = 10000;
                 }
 
-                Boss1LaserPos.X += (x / u) * EnemyLaserSpeed + p;
-                Boss1LaserPos.Y += (y / u) * EnemyLaserSpeed + p;
+                Boss1LaserPos.X += (x / u) * EnemyLaserSpeed+p ;
+                Boss1LaserPos.Y += (y / u) * EnemyLaserSpeed +p;
                 Boss1LaserPos.Z += (z / u) * EnemyLaserSpeed;
 
             }

@@ -14,11 +14,11 @@ namespace SpaceBUTT
     {
         public int killedEnemies;
         Boss1 boss1 = new Boss1();
+
         public void Update(GameTime gameTime, Player player, Spawn spawn, HUD hud, int killedEnemies)
         {
             this.killedEnemies = killedEnemies;
             
-
             collisionCheckPlayerAsteroid(player.getBoundingSphere(), spawn, hud,player);
 
             for (int j = 0; j < player.shoot.laser.Count(); j++)
@@ -49,8 +49,8 @@ namespace SpaceBUTT
                 for (int j = 0; j < spawn.boss1[i].shoot3.boss1Laser.Count(); j++)
                     if (spawn.boss1[i].shoot3.boss1Laser[j].getBoundingSphere().Intersects(sphere))
                     {
-                        player.playerHealth -= 5;
-                        hud.rectangle.Width = (int)(300 * (player.playerHealth / 100));
+                        player.PlayerHealth -= 5;
+                        hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
                         spawn.boss1[i].shoot3.boss1Laser.RemoveAt(j);
                     }
             
@@ -63,8 +63,8 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.asteroid.Count(); i++)
                 if (spawn.asteroid[i].getBoundingSphere().Intersects(sphere))
                 {
-                    player.playerHealth -= 20;
-                    hud.rectangle.Width = (int)(300*(player.playerHealth/100));
+                    player.PlayerHealth -= 20;
+                    hud.rectangle.Width = (int)(300*(player.PlayerHealth/100));
                     spawn.asteroid.RemoveAt(i);
                 }
             return true;
@@ -75,14 +75,14 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.boss1.Count(); i++)
                 if (spawn.boss1[i].getBoundingSphere().Intersects(sphere))
                 {
-                    if (boss1.getBossLife() <= 0f)
+                    if (boss1.BossLife <= 0f)
                     {
                         spawn.boss1.RemoveAt(i);
                     }
                     else
                     {
-                        boss1.setBosslife(boss1.getBossLife() - 0.01f);
-                        hud.rectangleBoss.Width = (int)(700*((boss1.getBossLife()/100)));
+                        boss1.BossLife= boss1.BossLife - 0.01f;
+                        hud.rectangleBoss.Width = (int)(700*((boss1.BossLife/100)));
                     }
                         
                 }
@@ -95,7 +95,6 @@ namespace SpaceBUTT
                 if (spawn.asteroid[i].getBoundingSphere().Intersects(sphere))
                 {
                     spawn.asteroid.RemoveAt(i);
-                    Boss1 bosslife;
                 }
             return true;
         }
@@ -117,8 +116,8 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.enemies.Count(); i++)
                 if (spawn.enemies[i].getBoundingSphere().Intersects(sphere))
                 {
-                    player.playerHealth -= 10;
-                    hud.rectangle.Width = (int)(300 * (player.playerHealth / 100));
+                    player.PlayerHealth -= 10;
+                    hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
                     spawn.enemies.RemoveAt(i);
                 }
             return true;
@@ -130,8 +129,8 @@ namespace SpaceBUTT
                 for (int j = 0; j < spawn.enemies[i].shoot1.enemyLaser.Count();j++ )
                     if (spawn.enemies[i].shoot1.enemyLaser[j].getBoundingSphere().Intersects(sphere))
                     {
-                        player.playerHealth -= 5;
-                        hud.rectangle.Width = (int)(300 * (player.playerHealth / 100));                       
+                        player.PlayerHealth -= 5;
+                        hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));                       
                         spawn.enemies[i].shoot1.enemyLaser.RemoveAt(j);
                     }
             return true;
