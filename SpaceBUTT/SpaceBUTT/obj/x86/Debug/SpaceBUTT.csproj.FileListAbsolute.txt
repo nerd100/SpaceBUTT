@@ -67,3 +67,45 @@ C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceB
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar2.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar3.xnb
 C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\background.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\effects.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Boss1.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Asteroid.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Crosshair.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\EnemyShip.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Laser.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Ship1.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\exit.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Healthbar1.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\orb.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\start.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\Healthbar1.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\StartButton.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\healtbar2.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar2.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar3.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\background.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\skybox.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\georgia.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_lf_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn_0.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.exe
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\SpaceBUTT.pdb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.csprojResolveAssemblyReference.cache
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.exe
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.pdb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\storybutton.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\quitbutton.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loadings.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\resumebutton.xnb

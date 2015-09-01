@@ -89,7 +89,7 @@ namespace SpaceBUTT
             //menu.Initialize(IsMouseVisible,GraphicsDevice.Viewport.Width);
 
             startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 430);
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 450);
             backgroundPosition = new Vector2(0,0); 
             gameState = GameState.StartMenu;
 
@@ -120,11 +120,11 @@ namespace SpaceBUTT
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //load the buttonimages into the content pipeline
-            startButton = Content.Load<Texture2D>(@"Menü/StartButton");
-            exitButton = Content.Load<Texture2D>(@"Menü/exit");
+            startButton = Content.Load<Texture2D>(@"Menü/storybutton");
+            exitButton = Content.Load<Texture2D>(@"Menü/quitbutton");
             background = Content.Load<Texture2D>(@"Menü/background");
             //load the loading screen
-            loadingScreen = Content.Load<Texture2D>(@"Menü/loading");
+            loadingScreen = Content.Load<Texture2D>(@"Menü/loadings");
         }
 
 
@@ -297,8 +297,8 @@ namespace SpaceBUTT
             //check the startmenu
             if (gameState == GameState.StartMenu)
             {
-                Rectangle startButtonRect = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, 100, 20);
-                Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X, (int)exitButtonPosition.Y, 100, 20);
+                Rectangle startButtonRect = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, 137, 40);
+                Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X, (int)exitButtonPosition.Y, 137, 40);
 
                 if (mouseClickRect.Intersects(startButtonRect)) //player clicked start button
                 {
@@ -325,7 +325,7 @@ namespace SpaceBUTT
             //check the resumebutton
             if (gameState == GameState.Paused)
             {
-                Rectangle resumeButtonRect = new Rectangle((int)resumeButtonPosition.X, (int)resumeButtonPosition.Y, 100, 20);
+                Rectangle resumeButtonRect = new Rectangle((int)resumeButtonPosition.X, (int)resumeButtonPosition.Y, 137, 40);
 
                 if (mouseClickRect.Intersects(resumeButtonRect))
                 {
@@ -337,7 +337,7 @@ namespace SpaceBUTT
         void LoadGame()
         {
             pauseButton = Content.Load<Texture2D>(@"Menü/pause");
-            resumeButton = Content.Load<Texture2D>(@"Menü/resume");
+            resumeButton = Content.Load<Texture2D>(@"Menü/resumebutton");
             resumeButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (resumeButton.Width / 2),
                                                (GraphicsDevice.Viewport.Height / 2) - (resumeButton.Height / 2));      
             Thread.Sleep(1000);
