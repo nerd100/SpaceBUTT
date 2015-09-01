@@ -74,11 +74,9 @@ D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Crosshair.x
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\EnemyShip.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Laser.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Ship1.xnb
-D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\exit.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Healthbar1.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\orb.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause.xnb
-D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\start.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_bk.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_dn.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_ft.xnb
@@ -86,11 +84,9 @@ D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_rt.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\Healthbar1.xnb
-D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\StartButton.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\healtbar2.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar2.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar3.xnb
-D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\background.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\skybox.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\georgia.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sky\purplenebula_up_0.xnb
@@ -107,5 +103,9 @@ D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.exe
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\obj\x86\Debug\SpaceBUTT.pdb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\storybutton.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\quitbutton.xnb
-D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loadings.xnb
 D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\resumebutton.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loadbackround.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\mainmenu.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pausebackround.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\story1artwork.xnb
+D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\story2artwork.xnb

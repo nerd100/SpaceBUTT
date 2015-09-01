@@ -89,15 +89,6 @@
       </Dependency>
     </Item>
     <Item>
-      <Source>Menü\exit.png</Source>
-      <Name>Menü\exit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\exit.xnb</Output>
-      <Time>2015-08-31T19:09:05.6720224+02:00</Time>
-    </Item>
-    <Item>
       <Source>Menü\Healthbar1.jpg</Source>
       <Name>Menü\Healthbar1</Name>
       <Importer>TextureImporter</Importer>
@@ -122,15 +113,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause.xnb</Output>
-      <Time>2015-08-31T19:09:05.6720224+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Menü\start.png</Source>
-      <Name>Menü\start</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\start.xnb</Output>
       <Time>2015-08-31T19:09:05.6720224+02:00</Time>
     </Item>
     <Item>
@@ -197,15 +179,6 @@
       <Time>2015-08-31T19:09:05.7191554+02:00</Time>
     </Item>
     <Item>
-      <Source>Menü\StartButton.jpg</Source>
-      <Name>Menü\StartButton</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\StartButton.xnb</Output>
-      <Time>2015-08-31T19:10:32.3602554+02:00</Time>
-    </Item>
-    <Item>
       <Source>Menü\healtbar2.jpg</Source>
       <Name>Menü\healtbar2</Name>
       <Importer>TextureImporter</Importer>
@@ -231,15 +204,6 @@
       <Options>None</Options>
       <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\healtbar3.xnb</Output>
       <Time>2015-08-31T19:10:32.3915065+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Menü\background.png</Source>
-      <Name>Menü\background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\background.xnb</Output>
-      <Time>2015-08-31T19:10:32.3758848+02:00</Time>
     </Item>
     <Item>
       <Source>Sky\skybox.x</Source>
@@ -433,15 +397,6 @@
       <Time>2015-09-02T00:17:44.0048597+02:00</Time>
     </Item>
     <Item>
-      <Source>Menü\loadings.jpg</Source>
-      <Name>Menü\loadings</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loadings.xnb</Output>
-      <Time>2015-09-01T23:51:18.7392498+02:00</Time>
-    </Item>
-    <Item>
       <Source>Menü\resumebutton.png</Source>
       <Name>Menü\resumebutton</Name>
       <Importer>TextureImporter</Importer>
@@ -449,6 +404,51 @@
       <Options>None</Options>
       <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\resumebutton.xnb</Output>
       <Time>2015-09-02T00:09:38.9917899+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\loadbackround.png</Source>
+      <Name>Menü\loadbackround</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\loadbackround.xnb</Output>
+      <Time>2015-09-02T00:35:33.6513794+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\mainmenu.png</Source>
+      <Name>Menü\mainmenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\mainmenu.xnb</Output>
+      <Time>2015-09-02T00:35:33.6533807+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\pausebackround.png</Source>
+      <Name>Menü\pausebackround</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pausebackround.xnb</Output>
+      <Time>2015-09-02T00:35:33.6553805+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\story1artwork.png</Source>
+      <Name>Menü\story1artwork</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\story1artwork.xnb</Output>
+      <Time>2015-09-02T00:35:33.6453749+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\story2artwork.png</Source>
+      <Name>Menü\story2artwork</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\GutShit\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\story2artwork.xnb</Output>
+      <Time>2015-09-02T00:35:33.6483753+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

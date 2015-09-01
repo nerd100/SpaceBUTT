@@ -26,11 +26,13 @@ namespace SpaceBUTT
         private Texture2D background;
         private Texture2D startButton;
         private Texture2D exitButton;
+        private Texture2D endlessButton;
         private Texture2D pauseButton;
         private Texture2D resumeButton;
         private Texture2D loadingScreen;
         private Vector2 backgroundPosition;
         private Vector2 startButtonPosition;
+        private Vector2 endlessButtonPosition;
         private Vector2 exitButtonPosition;
         private Vector2 resumeButtonPosition;
         private GameState gameState;
@@ -89,7 +91,9 @@ namespace SpaceBUTT
             //menu.Initialize(IsMouseVisible,GraphicsDevice.Viewport.Width);
 
             startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 450);
+            endlessButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 450);
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 500);
+           
             backgroundPosition = new Vector2(0,0); 
             gameState = GameState.StartMenu;
 
@@ -121,10 +125,11 @@ namespace SpaceBUTT
 
             //load the buttonimages into the content pipeline
             startButton = Content.Load<Texture2D>(@"Menü/storybutton");
+            endlessButton = Content.Load<Texture2D>(@"Menü/storybutton");
             exitButton = Content.Load<Texture2D>(@"Menü/quitbutton");
-            background = Content.Load<Texture2D>(@"Menü/background");
+            background = Content.Load<Texture2D>(@"Menü/mainmenu");
             //load the loading screen
-            loadingScreen = Content.Load<Texture2D>(@"Menü/loadings");
+            loadingScreen = Content.Load<Texture2D>(@"Menü/loadbackround");
         }
 
 
@@ -299,6 +304,7 @@ namespace SpaceBUTT
             {
                 Rectangle startButtonRect = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, 137, 40);
                 Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X, (int)exitButtonPosition.Y, 137, 40);
+                Rectangle endlesssButtonRect = new Rectangle((int)endlessButtonPosition.X, (int)endlessButtonPosition.Y, 137, 40);
 
                 if (mouseClickRect.Intersects(startButtonRect)) //player clicked start button
                 {

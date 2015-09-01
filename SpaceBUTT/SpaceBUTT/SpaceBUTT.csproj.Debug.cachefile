@@ -5,11 +5,9 @@ Content\Model\Crosshair.xnb
 Content\Model\EnemyShip.xnb
 Content\Model\Laser.xnb
 Content\Model\Ship1.xnb
-Content\Menü\exit.xnb
 Content\Menü\Healthbar1.xnb
 Content\Menü\orb.xnb
 Content\Menü\pause.xnb
-Content\Menü\start.xnb
 Content\Sky\purplenebula_bk.xnb
 Content\Sky\purplenebula_dn.xnb
 Content\Sky\purplenebula_ft.xnb
@@ -17,11 +15,9 @@ Content\Sky\purplenebula_lf.xnb
 Content\Sky\purplenebula_rt.xnb
 Content\Sky\purplenebula_up.xnb
 Content\UI\Healthbar1.xnb
-Content\Menü\StartButton.xnb
 Content\Menü\healtbar2.xnb
 Content\UI\healtbar2.xnb
 Content\UI\healtbar3.xnb
-Content\Menü\background.xnb
 Content\Sky\skybox.xnb
 Content\UI\georgia.xnb
 Content\Sky\purplenebula_up_0.xnb
@@ -32,5 +28,9 @@ Content\Sky\purplenebula_bk_0.xnb
 Content\Sky\purplenebula_dn_0.xnb
 Content\Menü\storybutton.xnb
 Content\Menü\quitbutton.xnb
-Content\Menü\loadings.xnb
 Content\Menü\resumebutton.xnb
+Content\Menü\loadbackround.xnb
+Content\Menü\mainmenu.xnb
+Content\Menü\pausebackround.xnb
+Content\Menü\story1artwork.xnb
+Content\Menü\story2artwork.xnb

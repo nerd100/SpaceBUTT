@@ -56,11 +56,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menü\exit.png">
-      <Name>exit</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Menü\Healthbar1.jpg">
       <Name>Healthbar1</Name>
       <Importer>TextureImporter</Importer>
@@ -73,11 +68,6 @@
     </Compile>
     <Compile Include="Menü\pause.png">
       <Name>pause</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Menü\start.png">
-      <Name>start</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -161,13 +151,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menü\StartButton.jpg">
-      <Name>StartButton</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Menü\healtbar2.jpg">
       <Name>healtbar2</Name>
       <Importer>TextureImporter</Importer>
@@ -189,13 +172,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menü\background.png">
-      <Name>background</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Menü\storybutton.png">
       <Name>storybutton</Name>
       <Importer>TextureImporter</Importer>
@@ -210,15 +186,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menü\loadings.jpg">
-      <Name>loadings</Name>
+    <Compile Include="Menü\resumebutton.png">
+      <Name>resumebutton</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menü\resumebutton.png">
-      <Name>resumebutton</Name>
+    <Compile Include="Menü\loadbackround.png">
+      <Name>loadbackround</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menü\mainmenu.png">
+      <Name>mainmenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menü\pausebackround.png">
+      <Name>pausebackround</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menü\story1artwork.png">
+      <Name>story1artwork</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Menü\story2artwork.png">
+      <Name>story2artwork</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
