@@ -126,14 +126,14 @@ namespace SpaceBUTT
                     modelVelocity += modelVelocityX;
                 }
 
-                if (stat.IsKeyDown(Keys.F) && BarrelRoll == true) //BarrelRoll
+                if (stat.IsKeyDown(Keys.Q) && BarrelRoll == true) //BarrelRoll
                 {
                     BarrelRoll = false;
                     modelRotationZ -= MathHelper.ToRadians(360);
                     modelVelocity.X -= 100;
 
                 }
-                if (stat.IsKeyDown(Keys.G) && BarrelRoll == true) //BarrelRoll
+                if (stat.IsKeyDown(Keys.E) && BarrelRoll == true) //BarrelRoll
                 {
                     BarrelRoll = false;
                     modelRotationZ = MathHelper.ToRadians(360);

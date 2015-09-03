@@ -20,6 +20,7 @@ namespace SpaceBUTT
         public List<EnemyLaser> enemyLaser = new List<EnemyLaser>();
         public List<Boss1> boss1 = new List<Boss1>();
         public List<Boss1Laser> boss1Laser = new List<Boss1Laser>();
+        public List<BombEx> bombex = new List<BombEx>();
         bool wall = true;
         
         int spawnTimer = 0;
@@ -56,6 +57,14 @@ namespace SpaceBUTT
             asteroid.Add(new Asteroid(asteroiden, new Vector3(x, y, -20000)));
 
         }
+
+        public void BombEx(ContentManager Content, Vector3 modelPos)
+        {
+            Model bomb = Content.Load<Model>("Model/BombEx");       
+            bombex.Add(new BombEx(bomb, new Vector3(0, 0, -100)));
+
+        }
+
 
         public void EnemyShip(ContentManager Content)
         {
@@ -201,6 +210,10 @@ namespace SpaceBUTT
             {
                 asteroid[i].Update(gameTime);
             }
+            for (int i = 0; i < bombex.Count(); i++)
+            {
+                bombex[i].Update(gameTime);
+            }
 
             for (int j = 0; j < asteroid.Count(); j++) 
             {
@@ -235,6 +248,13 @@ namespace SpaceBUTT
                 if (laser[j].laserPos.Z <= -50000)
                 {
                     laser.RemoveAt(j);
+                }
+            }
+            for (int j = 0; j < bombex.Count(); j++)
+            {
+                if (bombex[j].bombexPos.Z <= -50000)
+                {
+                    bombex.RemoveAt(j);
                 }
             }
             for (int j = 0; j < boss1Laser.Count(); j++)
@@ -281,6 +301,10 @@ namespace SpaceBUTT
             for (int i = 0; i < laser.Count(); i++)
             {
                 laser[i].Draw(Projection, View);       
+            }
+            for (int i = 0; i < bombex.Count(); i++)
+            {
+               // bombex[i].Draw(Projection, View);
             }
 
             for (int i = 0; i < enemies.Count(); i++)

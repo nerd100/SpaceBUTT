@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
+    <Compile Include="BombEx.cs" />
     <Compile Include="Boss1.cs" />
     <Compile Include="Boss1Laser.cs" />
     <Compile Include="Collision.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Skybox.cs" />
     <Compile Include="Spawn.cs" />
+    <Compile Include="Station.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

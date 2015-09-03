@@ -16,7 +16,7 @@ namespace SpaceBUTT
     public class EnemyShip 
     {
        public Model Enemy;
-       public Vector3 EnemyPos = Vector3.Zero;
+       public Vector3 EnemyPos;
        public int EnemySpeed;
        public Spawn shoot1 = new Spawn();
 

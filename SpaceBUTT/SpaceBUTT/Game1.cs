@@ -21,7 +21,8 @@ namespace SpaceBUTT
             StartMenu,
             Loading,
             Playing,
-            Paused
+            Paused,
+            Tutorial
         }
         private Texture2D background;
         private Texture2D startButton;
@@ -52,6 +53,9 @@ namespace SpaceBUTT
         HUD hud = new HUD();
         Effect effect;
         Skybox skybox = new Skybox();
+        Station station = new Station();
+        Boss1 boss1 = new Boss1();
+        
 
         int spawnEnemyTimer = 0;
         int spawnTimer = 0;
@@ -60,9 +64,17 @@ namespace SpaceBUTT
         int spawnedBoss = 0;
 
         public int killedEnemies = 0;
-
+        bool spawnBoss2 = false;
         bool spawnBoss = false;
-        bool stopSpawn = true; 
+        bool stopSpawn = true;
+
+        bool level0=true;
+        bool level1;
+        bool level2;
+        bool level3;
+
+        int zaehler;
+        int i = 0;
 
         public Matrix View;
         public Matrix Projection;
@@ -119,8 +131,8 @@ namespace SpaceBUTT
             player.LoadContent(Content);
             cross.LoadContent(Content);
             skybox.LoadContent(Content, effect);
-          
-
+            station.LoadContent(Content);
+           // bomb.LoadContent(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //load the buttonimages into the content pipeline
@@ -142,7 +154,58 @@ namespace SpaceBUTT
             KeyboardState stat = Keyboard.GetState();
             if (stat.IsKeyDown(Keys.Escape))
                 this.Exit();
-
+            if (stat.IsKeyDown(Keys.NumPad0))
+            {
+                level0 = true;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+            }
+            if (stat.IsKeyDown(Keys.NumPad1))
+            {
+                level0 = false;
+                level1 = true;
+                level2 = false;
+                level3 = false;
+            }
+            if (stat.IsKeyDown(Keys.NumPad2))
+            {
+                level0 = false;
+                level1 = false;
+                level2 = true;
+                level3 = false;
+            }
+            if (stat.IsKeyDown(Keys.NumPad3))
+            {
+                level0 = false;
+                level1 = false;
+                level2 = false;
+                level3 = true;
+            }
+               
+            GamePadState currentState = GamePad.GetState(PlayerIndex.One);
+            if (currentState.IsConnected)
+            {
+                if (gameState == GameState.Tutorial && (currentState.ThumbSticks.Left.X > 0.5 || currentState.ThumbSticks.Left.X < -0.5 || currentState.ThumbSticks.Left.Y > 0.5 || currentState.ThumbSticks.Left.Y < -0.5) && zaehler == 0)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && currentState.IsButtonDown(Buttons.A) && zaehler == 1)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && (currentState.IsButtonDown(Buttons.LeftShoulder) || currentState.IsButtonDown(Buttons.RightShoulder)) && zaehler == 2)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && currentState.IsButtonDown(Buttons.X) && zaehler == 3)
+                    gameState = GameState.Playing;
+            }
+            else
+            {
+                if (gameState == GameState.Tutorial && (stat.IsKeyDown(Keys.W) || stat.IsKeyDown(Keys.A) || stat.IsKeyDown(Keys.S) || stat.IsKeyDown(Keys.D)) && zaehler == 0)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && stat.IsKeyDown(Keys.Space) && zaehler == 1)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && (stat.IsKeyDown(Keys.Q) || stat.IsKeyDown(Keys.E)) && zaehler == 2)
+                    gameState = GameState.Playing;
+                if (gameState == GameState.Tutorial && stat.IsKeyDown(Keys.F) && zaehler == 3)
+                    gameState = GameState.Playing;
+            }
             if (stat.IsKeyDown(Keys.P))
             {
                 gameState = GameState.Loading;
@@ -153,7 +216,7 @@ namespace SpaceBUTT
             {
                 backgroundThread = new Thread(LoadGame);
                 isLoading = true;
-     
+
                 backgroundThread.Start();
             }
 
@@ -164,84 +227,157 @@ namespace SpaceBUTT
                 reset();
             }
             if (gameState == GameState.Playing && !isPlayerDead)
+            {
+                if (stat.IsKeyDown(Keys.D1))
+                    spawnEnemyTime = 100;
+                if (stat.IsKeyDown(Keys.D2))
+                    spawnEnemyTime = 50;
+                if (stat.IsKeyDown(Keys.D3))
+                    spawnEnemyTime = 10;
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                    this.Exit();
+
+
+                if (spawnTimer > spawnTime)
                 {
-                    if (stat.IsKeyDown(Keys.D1))
-                        spawnEnemyTime = 100;
-                    if (stat.IsKeyDown(Keys.D2))
-                        spawnEnemyTime = 50;
-                    if (stat.IsKeyDown(Keys.D3))
-                        spawnEnemyTime = 10;
-                    if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                        this.Exit();
+                    spawnTimer = 0;
+                    spawn.Asteroid(Content);
+                }
 
-                   
-                        if (spawnTimer > spawnTime)
-                        {
-                            spawnTimer = 0;
-                            spawn.Asteroid(Content);
-                        }
+                if (spawn.boss1.Count == 0)
+                {
+                    if (spawnEnemyTimer > spawnEnemyTime)
+                    {
+                        spawnEnemyTimer = 0;
+                        spawn.EnemyShip(Content);
 
-                        if (spawn.boss1.Count == 0 )
-                        {
-                            if (spawnEnemyTimer > spawnEnemyTime)
-                            {
-                                spawnEnemyTimer = 0;
-                                spawn.EnemyShip(Content);
+                    }
+                }
+                if (spawnBoss2 && stopSpawn == true)
+                {
 
-                            }
-                        }
-                        if (killedEnemies >= 0 && stopSpawn == true)
-                        {
+                    if (hud.rectangleBoss.Width < 700)
+                    {
+                        spawnBoss = true;
+                    }
+                    else
+                    {
+                        spawnBoss = false;
+                        stopSpawn = false;
 
-                            if (hud.rectangleBoss.Width < 700)
-                            {
-                                spawnBoss = true;
-                            }
-                            else
-                            {
-                                spawnBoss = false;
-                                stopSpawn = false;
-                            }
-                            
-                        }
 
-                   if (spawnBoss == true && spawnedBoss == 0)
-                   {
-                       spawn.Boss1(Content);
-                       spawnedBoss = 1;
-                      // spawnBoss = false;    
-                   }
-                  
-                  
-                    collision.Update(gameTime, player, spawn, hud, killedEnemies);
+                    }
+
+                }
+
+                if (spawnBoss == true && spawnedBoss == 0)
+                {
+                    spawn.Boss1(Content);
+                    spawnedBoss = 1;
+                    // spawnBoss = false;    
+                }
+
+                if (level0 == true)
+                {
+                    collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
-                    spawn.Update(gameTime, Content, player.PlayerPosition);
                     hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    i++;
+                    if (i == 200)
+                    {
+                        gameState = GameState.Tutorial;
+                        zaehler = 0;
+                    }
+                    if (i == 300)
+                    {
+                        gameState = GameState.Tutorial;
+                        zaehler = 1;
+                    }
+                    if (i == 400)
+                    {
+                        gameState = GameState.Tutorial;
+                        zaehler = 2;
+                    }
+                    if (i == 500)
+                    {
+                        gameState = GameState.Tutorial;
+                        zaehler = 3;
+                    }
+                    if (i == 600)
+                    {
+                        level0 = false;
+                        level1 = true;
+                    }
 
+                }
+                if (level1 == true)
+                {
+                    collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
+                    player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
+                    cross.Update(gameTime);
+                    hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
+                    //station.Update(gameTime);
+                  //  bomb.Update(gameTime);
                     spawnTimer++;
                     spawnEnemyTimer++;
-                    View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
-                }
+                    if (killedEnemies > 5)
+                    {
+                        level1 = false;
+                        level2 = true;
 
-                mouseState = Mouse.GetState();
-                if (previousMouseState.LeftButton == ButtonState.Pressed &&
-                    mouseState.LeftButton == ButtonState.Released)
+                    }
+                }
+                if (level2 == true)
                 {
-                    MouseClicked(mouseState.X, mouseState.Y);
+                    collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
+                    player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
+                    cross.Update(gameTime);
+                    hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
+                    //station.Update(gameTime);
+                    spawnBoss2 = true;
+                    if (boss1.BossLife <= 0)
+                    {
+                        level2 = false;
+                        level3 = true;
+                    }
+
                 }
-
-                previousMouseState = mouseState;
-
-                if (gameState == GameState.Playing && isLoading)
+                if (level3 == true)
                 {
-                    LoadGame();
-                    isLoading = false;
+                    collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
+                    player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
+                    cross.Update(gameTime);
+                    hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    //spawn.Update(gameTime, Content, player.PlayerPosition);
+                    station.Update(gameTime);
+                    //spawnBoss
+
                 }
 
-                killedEnemies = collision.IncrementkilledEnemie();
+                View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
+            }
 
-            
+            mouseState = Mouse.GetState();
+            if (previousMouseState.LeftButton == ButtonState.Pressed &&
+                mouseState.LeftButton == ButtonState.Released)
+            {
+                MouseClicked(mouseState.X, mouseState.Y);
+            }
+
+            previousMouseState = mouseState;
+
+            if (gameState == GameState.Playing && isLoading)
+            {
+                LoadGame();
+                isLoading = false;
+            }
+
+            killedEnemies = collision.IncrementkilledEnemie();
+
+
             base.Update(gameTime);
         }
 
@@ -257,8 +393,8 @@ namespace SpaceBUTT
                 spriteBatch.Draw(background, backgroundPosition, Color.White);
                 spriteBatch.Draw(startButton, startButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
-               
-                
+
+
             }
 
             //show the loading screen when needed
@@ -267,29 +403,71 @@ namespace SpaceBUTT
                 spriteBatch.Draw(loadingScreen, new Vector2((GraphicsDevice.Viewport.Width / 2) - (loadingScreen.Width / 2), (GraphicsDevice.Viewport.Height / 2) - (loadingScreen.Height / 2)), Color.YellowGreen);
             }
 
-            
 
-             if (gameState == GameState.Playing)
-             {
-                
-                 spriteBatch.Draw(pauseButton, new Vector2(700, 0), Color.White);
 
-                 skybox.Draw(Projection, View, device);
+            if (gameState == GameState.Playing)
+            {
 
-                 GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-                 player.Draw(Projection, View);
-                 cross.Draw(Projection, View);
-                 spawn.Draw(Projection, View);
-                 hud.Draw(spriteBatch, killedEnemies);
-                 
-             }
-             if (gameState == GameState.Paused)
-             {
-                 spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
-             }
+                spriteBatch.Draw(pauseButton, new Vector2(700, 0), Color.White);
+                if (level0 == true)
+                {
+                    skybox.Draw(Projection, View, device);
+                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                    player.Draw(Projection, View);
+                    cross.Draw(Projection, View);
+                    hud.Draw(spriteBatch, killedEnemies);
 
-             spriteBatch.End();
-                          
+                }
+                if (level1 == true)
+                {
+                    skybox.Draw(Projection, View, device);
+                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                    player.Draw(Projection, View);
+                    cross.Draw(Projection, View);
+                    hud.Draw(spriteBatch, killedEnemies);
+                    spawn.Draw(Projection, View);
+                    //bomb.Draw(Projection, View);
+                    // station.Draw(Projection, View);
+                }
+                if (level2 == true)
+                {
+                    skybox.Draw(Projection, View, device);
+                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                    player.Draw(Projection, View);
+                    cross.Draw(Projection, View);
+                    hud.Draw(spriteBatch, killedEnemies);
+                    spawn.Draw(Projection, View);
+                    // station.Draw(Projection, View);
+                }
+                if (level3 == true)
+                {
+                    skybox.Draw(Projection, View, device);
+                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                    player.Draw(Projection, View);
+                    cross.Draw(Projection, View);
+                    hud.Draw(spriteBatch, killedEnemies);
+                    //spawn.Draw(Projection, View);
+                    station.Draw(Projection, View);
+                }
+
+            }
+            if (gameState == GameState.Paused)
+            {
+                spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
+            }
+
+            if (gameState == GameState.Tutorial)
+            {
+                skybox.Draw(Projection, View, device);
+                GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                player.Draw(Projection, View);
+                cross.Draw(Projection, View);
+                hud.Draw(spriteBatch, killedEnemies);
+                hud.Draw2(spriteBatch, zaehler);
+            }
+
+            spriteBatch.End();
+
             base.Draw(gameTime);
         }
 

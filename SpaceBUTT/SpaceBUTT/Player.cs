@@ -16,6 +16,7 @@ namespace SpaceBUTT
     {
         Model myModel;
         public Spawn shoot = new Spawn();
+        public Spawn bomb = new Spawn();
         public Vector3 PlayerPosition = new Vector3(0, 0, 0);
 
         int shootTime = 10;
@@ -68,6 +69,7 @@ namespace SpaceBUTT
 
             getBoundingSphere();
             shoot.Update(gameTime, Content, PlayerPosition);
+            bomb.Update(gameTime, Content, PlayerPosition);
             shootTimer++;
 
            
@@ -154,14 +156,14 @@ namespace SpaceBUTT
                     modelVelocityX *= 1;
                     modelVelocity += modelVelocityX;
                 }
-                if (stat.IsKeyDown(Keys.F) && BarrelRoll == true) //BarrelRoll
+                if (stat.IsKeyDown(Keys.Q) && BarrelRoll == true) //BarrelRoll
                 {
                     BarrelRoll = false;
                     modelRotationZ -= MathHelper.ToRadians(360);
                     modelVelocity.X -= 100;
                     
                 }
-                if (stat.IsKeyDown(Keys.G) && BarrelRoll == true) //BarrelRoll
+                if (stat.IsKeyDown(Keys.E) && BarrelRoll == true) //BarrelRoll
                 {
                     BarrelRoll = false;
                     modelRotationZ = MathHelper.ToRadians(360);
@@ -172,15 +174,16 @@ namespace SpaceBUTT
                 {
                     shootTimer = 0;
                     shoot.Laser(Content, PlayerPosition);
-                    
+                   
 
                 }
-                if (stat.IsKeyDown(Keys.E))
+                if (stat.IsKeyDown(Keys.F))
                 {
-                    for (int i = 0; i < asteroids.Count(); i++)
-                        asteroids.RemoveAt(i);
-                    for (int i = 0; i < enemies.Count(); i++)
-                        enemies.RemoveAt(i);
+                    bomb.BombEx(Content,PlayerPosition);
+                   // for (int i = 0; i < asteroids.Count(); i++)
+                   //     asteroids.RemoveAt(i);                    
+                   // for (int i = 0; i < enemies.Count(); i++)
+                    //        enemies.RemoveAt(i);
                 }
                 
             }
@@ -228,6 +231,7 @@ namespace SpaceBUTT
         public void Draw(Matrix proj,Matrix view)
         {
             shoot.Draw(proj, view);
+            bomb.Draw(proj, view);
             DrawModel(myModel,proj,view); 
         }
 
