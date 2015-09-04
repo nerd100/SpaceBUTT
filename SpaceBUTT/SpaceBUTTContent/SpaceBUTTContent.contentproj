@@ -220,6 +220,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BombEx.fbx">
+      <Name>BombEx</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Model\Station.fbx">
       <Name>Station</Name>
       <Importer>FbxImporter</Importer>
@@ -227,10 +234,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\BombEx.fbx">
-      <Name>BombEx</Name>
+    <Compile Include="Model\Geschütz.fbx">
+      <Name>Geschütz</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Balken1.fbx">
+      <Name>Balken1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Sounds\maintheme1.wav">
+      <Name>maintheme1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

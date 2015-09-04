@@ -55,20 +55,23 @@ namespace SpaceBUTT
         Skybox skybox = new Skybox();
         Station station = new Station();
         Boss1 boss1 = new Boss1();
-        
 
+        int spawnGeschuetzTimer = 0;
         int spawnEnemyTimer = 0;
         int spawnTimer = 0;
+        int spawnGeschuetzTime = 20;
         int spawnTime = 10;
         int spawnEnemyTime = 50;
         int spawnedBoss = 0;
+        int spawnBalkenTime = 50;
+        int spawnBalkenTimer = 0;
 
         public int killedEnemies = 0;
         bool spawnBoss2 = false;
         bool spawnBoss = false;
         bool stopSpawn = true;
 
-        bool level0=true;
+        bool level0 = true;
         bool level1;
         bool level2;
         bool level3;
@@ -85,6 +88,9 @@ namespace SpaceBUTT
 
         float aspectRatio;
 
+        //Sound
+        SoundEffect soundeff;
+        public Song song;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -105,8 +111,8 @@ namespace SpaceBUTT
             startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
             endlessButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 450);
             exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 500);
-           
-            backgroundPosition = new Vector2(0,0); 
+
+            backgroundPosition = new Vector2(0, 0);
             gameState = GameState.StartMenu;
 
             //get the mouse state
@@ -122,9 +128,13 @@ namespace SpaceBUTT
             device = graphics.GraphicsDevice;
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            song = Content.Load<Song>("Sounds/maintheme1");  // Put the name of your song here instead of "song_title"
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
+
 
             aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
-            Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), aspectRatio, 1.0f, 100000.0f);
+            Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), aspectRatio, 1.0f, 10000000.0f);
             View = Matrix.CreateLookAt(cameraPosition, cameraView, Vector3.Up);
             effect = Content.Load<Effect>("effects");
             hud.LoadContent(Content);
@@ -132,7 +142,7 @@ namespace SpaceBUTT
             cross.LoadContent(Content);
             skybox.LoadContent(Content, effect);
             station.LoadContent(Content);
-           // bomb.LoadContent(Content);
+            // bomb.LoadContent(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //load the buttonimages into the content pipeline
@@ -142,6 +152,9 @@ namespace SpaceBUTT
             background = Content.Load<Texture2D>(@"Menü/mainmenu");
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>(@"Menü/loadbackround");
+
+            //soundeff = Content.Load<SoundEffect>("");
+
         }
 
 
@@ -182,7 +195,7 @@ namespace SpaceBUTT
                 level2 = false;
                 level3 = true;
             }
-               
+
             GamePadState currentState = GamePad.GetState(PlayerIndex.One);
             if (currentState.IsConnected)
             {
@@ -228,6 +241,7 @@ namespace SpaceBUTT
             }
             if (gameState == GameState.Playing && !isPlayerDead)
             {
+
                 if (stat.IsKeyDown(Keys.D1))
                     spawnEnemyTime = 100;
                 if (stat.IsKeyDown(Keys.D2))
@@ -238,13 +252,25 @@ namespace SpaceBUTT
                     this.Exit();
 
 
-                if (spawnTimer > spawnTime)
+                if (spawnTimer > spawnTime && (level1 || level0))
                 {
                     spawnTimer = 0;
                     spawn.Asteroid(Content);
+
+                }
+                if (spawnGeschuetzTimer > spawnGeschuetzTime && level3)
+                {
+                    spawnGeschuetzTimer = 0;
+                    spawn.Geschuetz(Content);
+
+                }
+                if (spawnBalkenTimer > spawnBalkenTime && level3)
+                {
+                    spawnBalkenTimer = 0;
+                    spawn.Balken(Content);
                 }
 
-                if (spawn.boss1.Count == 0)
+                if (spawn.boss1.Count == 0 && level1)
                 {
                     if (spawnEnemyTimer > spawnEnemyTime)
                     {
@@ -279,10 +305,12 @@ namespace SpaceBUTT
 
                 if (level0 == true)
                 {
+
                     collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
                     hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
                     i++;
                     if (i == 200)
                     {
@@ -309,7 +337,10 @@ namespace SpaceBUTT
                         level0 = false;
                         level1 = true;
                     }
-
+                    spawnTimer++;
+                    spawnEnemyTimer++;
+                    spawnGeschuetzTimer++;
+                    spawnBalkenTimer++;
                 }
                 if (level1 == true)
                 {
@@ -319,9 +350,11 @@ namespace SpaceBUTT
                     hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
                     spawn.Update(gameTime, Content, player.PlayerPosition);
                     //station.Update(gameTime);
-                  //  bomb.Update(gameTime);
+                    //  bomb.Update(gameTime);
                     spawnTimer++;
                     spawnEnemyTimer++;
+                    spawnGeschuetzTimer++;
+                    spawnBalkenTimer++;
                     if (killedEnemies > 5)
                     {
                         level1 = false;
@@ -343,7 +376,10 @@ namespace SpaceBUTT
                         level2 = false;
                         level3 = true;
                     }
-
+                    spawnTimer++;
+                    spawnEnemyTimer++;
+                    spawnGeschuetzTimer++;
+                    spawnBalkenTimer++;
                 }
                 if (level3 == true)
                 {
@@ -351,10 +387,13 @@ namespace SpaceBUTT
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
                     hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
-                    //spawn.Update(gameTime, Content, player.PlayerPosition);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
                     station.Update(gameTime);
                     //spawnBoss
-
+                    spawnTimer++;
+                    spawnEnemyTimer++;
+                    spawnGeschuetzTimer++;
+                    spawnBalkenTimer++;
                 }
 
                 View = Matrix.CreateLookAt(cameraPosition, Vector3.Zero, Vector3.Up);
@@ -416,6 +455,7 @@ namespace SpaceBUTT
                     player.Draw(Projection, View);
                     cross.Draw(Projection, View);
                     hud.Draw(spriteBatch, killedEnemies);
+                    spawn.Draw(Projection, View);
 
                 }
                 if (level1 == true)
@@ -446,7 +486,7 @@ namespace SpaceBUTT
                     player.Draw(Projection, View);
                     cross.Draw(Projection, View);
                     hud.Draw(spriteBatch, killedEnemies);
-                    //spawn.Draw(Projection, View);
+                    spawn.Draw(Projection, View);
                     station.Draw(Projection, View);
                 }
 
@@ -523,9 +563,9 @@ namespace SpaceBUTT
             pauseButton = Content.Load<Texture2D>(@"Menü/pause");
             resumeButton = Content.Load<Texture2D>(@"Menü/resumebutton");
             resumeButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (resumeButton.Width / 2),
-                                               (GraphicsDevice.Viewport.Height / 2) - (resumeButton.Height / 2));      
+                                               (GraphicsDevice.Viewport.Height / 2) - (resumeButton.Height / 2));
             Thread.Sleep(1000);
-          
+
             gameState = GameState.Playing;
             isLoading = false;
         }
@@ -537,7 +577,7 @@ namespace SpaceBUTT
             player.PlayerPosition = Vector3.Zero;
             player.PlayerHealth = 100.0f;
             spawnEnemyTime = 50;
-            while (spawn.asteroid.Count() != 0 || spawn.enemies.Count() !=0 || spawn.boss1.Count() != 0)
+            while (spawn.asteroid.Count() != 0 || spawn.enemies.Count() != 0 || spawn.boss1.Count() != 0)
             {
                 for (int i = 0; i < spawn.asteroid.Count(); i++)
                     spawn.asteroid.RemoveAt(i);
@@ -546,7 +586,7 @@ namespace SpaceBUTT
                 for (int i = 0; i < spawn.boss1.Count(); i++)
                     spawn.boss1.RemoveAt(i);
             }
-           
+
             isPlayerDead = false;
             collision.killedEnemies = 0;
             spawnBoss = false;

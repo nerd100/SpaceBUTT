@@ -12,9 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SpaceBUTT
 {
-    /// <summary>
-    /// This is a game component that implements IUpdateable.
-    /// </summary>
+   
     public class BombEx 
     {
         public Model bombex;

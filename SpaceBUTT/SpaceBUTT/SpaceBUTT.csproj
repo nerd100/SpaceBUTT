@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
+    <Compile Include="Balken.cs" />
     <Compile Include="BombEx.cs" />
     <Compile Include="Boss1.cs" />
     <Compile Include="Boss1Laser.cs" />
@@ -117,6 +118,8 @@
     <Compile Include="Crosshair.cs" />
     <Compile Include="EnemyLaser.cs" />
     <Compile Include="EnemyShip.cs" />
+    <Compile Include="Geschuetz.cs" />
+    <Compile Include="GeschuetzLaser.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="Menu.cs" />

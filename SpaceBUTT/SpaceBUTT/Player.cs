@@ -221,7 +221,7 @@ namespace SpaceBUTT
 
             sphere.Center = PlayerPosition;
 
-            sphere.Radius *= 0.5f;
+            sphere.Radius *= 0.25f;
             return sphere;
         }
 

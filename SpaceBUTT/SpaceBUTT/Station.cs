@@ -16,8 +16,8 @@ namespace SpaceBUTT
     public class Station
     {
         Model station;
-        Vector3 StationPosition = new Vector3(0, -5000, -300000);
-        float StationSpeed = 100.0f;
+        Vector3 StationPosition = new Vector3(0, -10000, -300000);
+        float StationSpeed = 500.0f;
 
         public void LoadContent(ContentManager Content)
         {
@@ -38,7 +38,7 @@ namespace SpaceBUTT
                 {
 
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90)) * Matrix.CreateScale(50) * Matrix.CreateTranslation(StationPosition);
+                    effect.World = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90)) * Matrix.CreateScale(100) * Matrix.CreateTranslation(StationPosition);
                     effect.View = View;
                     effect.Projection = Projection;
                 }

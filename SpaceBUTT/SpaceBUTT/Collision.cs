@@ -20,6 +20,7 @@ namespace SpaceBUTT
             this.killedEnemies = killedEnemies;
             
             collisionCheckPlayerAsteroid(player.getBoundingSphere(), spawn, hud,player);
+            collisionCheckPlayerBalken(player.getBoundingSphere(), spawn, hud, player);
 
             for (int j = 0; j < player.shoot.laser.Count(); j++)
             {
@@ -48,6 +49,8 @@ namespace SpaceBUTT
             {
                 collisionCheckBombAsteroids(player.bomb.bombex[j].getBoundingSphere(), spawn);
             }
+
+            collisionCheckGeschuetzLaserPlayer(player.getBoundingSphere(), spawn, hud, player);
         }
 
 
@@ -97,6 +100,19 @@ namespace SpaceBUTT
                 }
             return true;
         }
+        public bool collisionCheckPlayerBalken(BoundingSphere sphere, Spawn spawn, HUD hud, Player player)
+        {
+
+            for (int i = 0; i < spawn.balken.Count(); i++)
+                if (spawn.balken[i].getBoundingSphere().Intersects(sphere))
+                {
+                    player.PlayerHealth -= 20;
+                    hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
+                    spawn.balken.RemoveAt(i);
+                }
+            return true;
+        }
+        
 
         public bool collisionCheckLaserBoss1(BoundingSphere sphere, Spawn spawn, HUD hud,Boss1 boss1)
         {
@@ -160,6 +176,18 @@ namespace SpaceBUTT
                         player.PlayerHealth -= 5;
                         hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));                       
                         spawn.enemies[i].shoot1.enemyLaser.RemoveAt(j);
+                    }
+            return true;
+        }
+        public bool collisionCheckGeschuetzLaserPlayer(BoundingSphere sphere, Spawn spawn, HUD hud, Player player)
+        {
+            for (int i = 0; i < spawn.geschuetz.Count(); i++)
+                for (int j = 0; j < spawn.geschuetz[i].shoot2.geschuetzLaser.Count(); j++)
+                    if (spawn.geschuetz[i].shoot2.geschuetzLaser[j].getBoundingSphere().Intersects(sphere))
+                    {
+                        player.PlayerHealth -= 5;
+                        hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
+                        spawn.geschuetz[i].shoot2.geschuetzLaser.RemoveAt(j);
                     }
             return true;
         }

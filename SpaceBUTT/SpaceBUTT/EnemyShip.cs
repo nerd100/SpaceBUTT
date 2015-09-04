@@ -17,10 +17,10 @@ namespace SpaceBUTT
     {
        public Model Enemy;
        public Vector3 EnemyPos;
-       public int EnemySpeed;
+       public int EnemySpeed = 50;
        public Spawn shoot1 = new Spawn();
 
-       public int EnemyHealth = 2;
+       public int EnemyHealth = 1;
 
      
        int shootTime = 100;
@@ -30,7 +30,7 @@ namespace SpaceBUTT
         {
             EnemyPos = ePos;
             Enemy = m;
-            EnemySpeed = 50;
+           ;
         }
 
 
