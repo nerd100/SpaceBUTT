@@ -19,7 +19,7 @@ namespace SpaceBUTT
         public Model Laser;
         public Vector3 GeschuetzLaserPos;
       
-        private int EnemyLaserSpeed=600;
+        private int EnemyLaserSpeed=500;
       
         public Vector3 PlayerPosition;
         Random rnd = new Random();

@@ -457,10 +457,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Model\Station.xnb</Output>
-      <Time>2015-09-04T15:00:19.522+02:00</Time>
+      <Time>2015-09-06T20:26:17.584+02:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Model\Station_0.xml</Key>
-        <Value>2015-09-04T15:00:24.835+02:00</Value>
+        <Value>2015-09-06T20:26:22.521+02:00</Value>
       </Dependency>
       <Request>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\FBX\60AB326A\Station.fbm\metal-texture-7_0.xnb</Request>
     </Item>
@@ -469,7 +469,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Model\Station_0.xml</Output>
-      <Time>2015-09-04T15:00:19.522+02:00</Time>
+      <Time>2015-09-06T20:26:17.584+02:00</Time>
     </Item>
     <Item>
       <Source>Model\BombEx.fbx</Source>
@@ -505,7 +505,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\FBX\60AB326A\Station.fbm\metal-texture-7_0.xnb</Output>
-      <Time>2015-09-04T15:00:24.35+02:00</Time>
+      <Time>2015-09-06T20:26:21.713+02:00</Time>
     </Item>
     <Item>
       <Source>Model\Geschütz.fbx</Source>
@@ -590,6 +590,129 @@
       <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sounds\maintheme1.xnb</Output>
       <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sounds\maintheme1.wma</Extra>
       <Time>2015-09-04T18:14:59.9+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\End.wmv</Source>
+      <Name>Video\End</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\End.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\End.wmv</Extra>
+      <Time>2015-09-06T14:29:16.313+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\Intro.wmv</Source>
+      <Name>Video\Intro</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\Intro.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\Intro.wmv</Extra>
+      <Time>2015-09-06T14:30:31.93+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\level3.wmv</Source>
+      <Name>Video\level3</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level3.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level3.wmv</Extra>
+      <Time>2015-09-06T14:30:14.196+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\level2.wmv</Source>
+      <Name>Video\level2</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level2.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level2.wmv</Extra>
+      <Time>2015-09-06T14:34:25.786+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\level1.wmv</Source>
+      <Name>Video\level1</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level1.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Video\level1.wmv</Extra>
+      <Time>2015-09-06T16:58:41.868+02:00</Time>
+    </Item>
+    <Item>
+      <Source>UI\Healthbar4.jpg</Source>
+      <Name>UI\Healthbar4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\UI\Healthbar4.xnb</Output>
+      <Time>2015-09-06T17:46:16.826+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\pause2.jpg</Source>
+      <Name>Menü\pause2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\pause2.xnb</Output>
+      <Time>2015-09-06T18:06:22.559+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\endlessButton.jpg</Source>
+      <Name>Menü\endlessButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\endlessButton.xnb</Output>
+      <Time>2015-09-06T19:08:32.277+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\GameOver.jpg</Source>
+      <Name>Menü\GameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\GameOver.xnb</Output>
+      <Time>2015-09-06T18:24:43.89+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\Return.jpg</Source>
+      <Name>Menü\Return</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Return.xnb</Output>
+      <Time>2015-09-06T18:39:25.624+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\ingame.wav</Source>
+      <Name>Sounds\ingame</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sounds\ingame.xnb</Output>
+      <Extra>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Sounds\ingame.wma</Extra>
+      <Time>2015-09-04T18:15:40.416+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\Credit.jpg</Source>
+      <Name>Menü\Credit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\Credit.xnb</Output>
+      <Time>2015-09-06T19:39:01.196+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Menü\CreditScreen.jpg</Source>
+      <Name>Menü\CreditScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dennis\Documents\Visual Studio 2010\Projects\SapceButt aktuell\SpaceBUTT\SpaceBUTT\SpaceBUTT\bin\x86\Debug\Content\Menü\CreditScreen.xnb</Output>
+      <Time>2015-09-06T19:44:44.071+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

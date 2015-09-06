@@ -22,7 +22,7 @@ namespace SpaceBUTT
         
         int shootTime = 0;
         int shootTimer = 0;
-        private int BossSpeed = 200;
+        private int BossSpeed = 100;
 
         private float _Bosslife = 100.0f;
         public float BossLife{

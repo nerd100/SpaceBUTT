@@ -80,7 +80,7 @@ namespace SpaceBUTT
                 for (int j = 0; j < spawn.boss1[i].shoot3.boss1Laser.Count(); j++)
                     if (spawn.boss1[i].shoot3.boss1Laser[j].getBoundingSphere().Intersects(sphere))
                     {
-                        player.PlayerHealth -= 5;
+                        player.PlayerHealth -= 2;
                         hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
                         spawn.boss1[i].shoot3.boss1Laser.RemoveAt(j);
                     }
@@ -94,7 +94,7 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.asteroid.Count(); i++)
                 if (spawn.asteroid[i].getBoundingSphere().Intersects(sphere))
                 {
-                    player.PlayerHealth -= 20;
+                    player.PlayerHealth -= 10;
                     hud.rectangle.Width = (int)(300*(player.PlayerHealth/100));
                     spawn.asteroid.RemoveAt(i);
                 }
@@ -106,7 +106,7 @@ namespace SpaceBUTT
             for (int i = 0; i < spawn.balken.Count(); i++)
                 if (spawn.balken[i].getBoundingSphere().Intersects(sphere))
                 {
-                    player.PlayerHealth -= 20;
+                    player.PlayerHealth -= 10;
                     hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
                     spawn.balken.RemoveAt(i);
                 }
@@ -125,7 +125,7 @@ namespace SpaceBUTT
                     }
                     else
                     {
-                        boss1.BossLife = boss1.BossLife - 0.1f;
+                        boss1.BossLife = boss1.BossLife - 0.05f;
                         hud.rectangleBoss.Width = (int)(700*((boss1.BossLife/100)));
                     }
                         
@@ -173,7 +173,7 @@ namespace SpaceBUTT
                 for (int j = 0; j < spawn.enemies[i].shoot1.enemyLaser.Count();j++ )
                     if (spawn.enemies[i].shoot1.enemyLaser[j].getBoundingSphere().Intersects(sphere))
                     {
-                        player.PlayerHealth -= 5;
+                        player.PlayerHealth -= 2;
                         hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));                       
                         spawn.enemies[i].shoot1.enemyLaser.RemoveAt(j);
                     }
@@ -185,7 +185,7 @@ namespace SpaceBUTT
                 for (int j = 0; j < spawn.geschuetz[i].shoot2.geschuetzLaser.Count(); j++)
                     if (spawn.geschuetz[i].shoot2.geschuetzLaser[j].getBoundingSphere().Intersects(sphere))
                     {
-                        player.PlayerHealth -= 5;
+                        player.PlayerHealth -= 2;
                         hud.rectangle.Width = (int)(300 * (player.PlayerHealth / 100));
                         spawn.geschuetz[i].shoot2.geschuetzLaser.RemoveAt(j);
                     }

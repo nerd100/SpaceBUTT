@@ -22,15 +22,31 @@ namespace SpaceBUTT
             Loading,
             Playing,
             Paused,
-            Tutorial
+            Tutorial,
+            Video,
+            GameOver,
+            Credits
         }
+        private Texture2D GameOverScreen;
+        private Texture2D CreditScreen;
         private Texture2D background;
+        private Texture2D pausebackground;
         private Texture2D startButton;
         private Texture2D exitButton;
         private Texture2D endlessButton;
+        private Texture2D ReturnButton;
+        private Texture2D QuitButton;
         private Texture2D pauseButton;
         private Texture2D resumeButton;
         private Texture2D loadingScreen;
+        private Texture2D CreditButton;
+        private Vector2 CreditScreenPosition;
+        private Vector2 CreditButtonPosition;
+        private Vector2 returnButtonPosition;
+        private Vector2 returnButtonPosition2;
+        private Vector2 quitButtonPosition;
+        private Vector2 GameOverScreenPosition;
+        private Vector2 pausebackgroundPosition;
         private Vector2 backgroundPosition;
         private Vector2 startButtonPosition;
         private Vector2 endlessButtonPosition;
@@ -67,17 +83,29 @@ namespace SpaceBUTT
         int spawnBalkenTimer = 0;
 
         public int killedEnemies = 0;
+        bool endless;
         bool spawnBoss2 = false;
         bool spawnBoss = false;
         bool stopSpawn = true;
-
+        bool sound = false;
         bool level0 = true;
         bool level1;
         bool level2;
         bool level3;
 
+        bool videorun0 = true;
+        bool videorun1;
+        bool videorun2;
+        bool videorun3;
+
+        bool videobla0 = true ;
+        bool videobla1;
+        bool videobla2;
+        bool videobla3;
+
         int zaehler;
-        int i = 0;
+        int zaehler2;
+        float Time = 0;
 
         public Matrix View;
         public Matrix Projection;
@@ -89,12 +117,30 @@ namespace SpaceBUTT
         float aspectRatio;
 
         //Sound
-        SoundEffect soundeff;
+     //   SoundEffect soundeff;
         public Song song;
+        public Song song2;
+
+        //Video
+        Video video0;
+        Video video1;
+        Video video2;
+        Video video3;
+
+        VideoPlayer player2;
+        VideoPlayer player3;
+        VideoPlayer player4;
+        VideoPlayer player5;
+ 
+
+        Texture2D videoTexture;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
         }
 
 
@@ -102,17 +148,24 @@ namespace SpaceBUTT
         {
             IsMouseVisible = true;
             graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferHeight = 600   ;
             graphics.PreferredBackBufferWidth = 800;
             graphics.ApplyChanges();
 
             //menu.Initialize(IsMouseVisible,GraphicsDevice.Viewport.Width);
 
-            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 400);
-            endlessButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 450);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 300, 500);
-
+            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 60, 250);
+            endlessButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 60, 300);
+            CreditButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 60, 350);
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 60, 400);
+        
+            returnButtonPosition = new Vector2(325,390);
+            returnButtonPosition2 = new Vector2(450, 500);
+            quitButtonPosition = new Vector2(325,450);
             backgroundPosition = new Vector2(0, 0);
+            pausebackgroundPosition = new Vector2(0, 0);
+            GameOverScreenPosition = new Vector2(0, 0);
+            CreditScreenPosition = new Vector2(0, 0);
             gameState = GameState.StartMenu;
 
             //get the mouse state
@@ -128,10 +181,24 @@ namespace SpaceBUTT
             device = graphics.GraphicsDevice;
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //Sounds
             song = Content.Load<Song>("Sounds/maintheme1");  // Put the name of your song here instead of "song_title"
+            song2 = Content.Load<Song>("Sounds/ingame");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
+            
 
+            //Video
+            video0 = Content.Load<Video>("Video/Intro");
+            video1 = Content.Load<Video>("Video/level1");
+            video2 = Content.Load<Video>("Video/level3");
+            video3 = Content.Load<Video>("Video/End");
+           
+
+            player2 = new VideoPlayer();
+            player3 = new VideoPlayer();
+            player4 = new VideoPlayer();
+            player5 = new VideoPlayer();
 
             aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
             Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), aspectRatio, 1.0f, 10000000.0f);
@@ -147,11 +214,17 @@ namespace SpaceBUTT
 
             //load the buttonimages into the content pipeline
             startButton = Content.Load<Texture2D>(@"Menü/storybutton");
-            endlessButton = Content.Load<Texture2D>(@"Menü/storybutton");
+            endlessButton = Content.Load<Texture2D>(@"Menü/endlessButton");
             exitButton = Content.Load<Texture2D>(@"Menü/quitbutton");
             background = Content.Load<Texture2D>(@"Menü/mainmenu");
+            pausebackground = Content.Load<Texture2D>(@"Menü/pausebackround");
+            GameOverScreen = Content.Load<Texture2D>(@"Menü/GameOver");
+            ReturnButton = Content.Load<Texture2D>(@"Menü/Return");
+            QuitButton = Content.Load<Texture2D>(@"Menü/quitbutton");
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>(@"Menü/loadbackround");
+            CreditButton = Content.Load<Texture2D>(@"Menü/Credit");
+            CreditScreen = Content.Load<Texture2D>(@"Menü/CreditScreen");
 
             //soundeff = Content.Load<SoundEffect>("");
 
@@ -164,6 +237,42 @@ namespace SpaceBUTT
 
         protected override void Update(GameTime gameTime)
         {
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
+
+            
+
+            if (gameState == GameState.Video && videorun0)
+            {
+                player2.Play(video0);
+                videorun0 = false;
+                
+            }
+            if (gameState == GameState.Video && videorun1)
+            {
+                player3.Play(video1);
+                videorun1 = false;
+                videobla1 = true;
+            }
+            if (gameState == GameState.Video && videorun2)
+            {
+                player4.Play(video2);
+                videorun2 = false;
+                videobla2 = true;
+            }
+            if (gameState == GameState.Video && videorun3)
+            {
+                player5.Play(video3);
+                videorun3 = false;
+                videobla3 = true;
+            }
+            if (gameState == GameState.GameOver) 
+            {
+                reset();
+            }
+
+
             KeyboardState stat = Keyboard.GetState();
             if (stat.IsKeyDown(Keys.Escape))
                 this.Exit();
@@ -237,17 +346,55 @@ namespace SpaceBUTT
             if (player.PlayerHealth <= 0)
             {
                 isPlayerDead = true;
-                reset();
+                gameState = GameState.GameOver;
+                //reset();
             }
-            if (gameState == GameState.Playing && !isPlayerDead)
+            if (gameState == GameState.Playing && !isPlayerDead && endless == true)
             {
+                if (sound == true)
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(song2);
+                    sound = false;
+                }
 
-                if (stat.IsKeyDown(Keys.D1))
-                    spawnEnemyTime = 100;
-                if (stat.IsKeyDown(Keys.D2))
-                    spawnEnemyTime = 50;
-                if (stat.IsKeyDown(Keys.D3))
-                    spawnEnemyTime = 10;
+                if (spawnTimer > spawnTime)
+                {
+                    spawnTimer = 0;
+                    spawn.Asteroid(Content);
+
+                }
+                if (spawnEnemyTimer > spawnEnemyTime)
+                {
+                        spawnEnemyTimer = 0;
+                        spawn.EnemyShip(Content);  
+                }
+
+                    Time += 0.5f;
+                    if (Time == 100)
+                        spawnEnemyTime = 100;
+                    if (Time == 200)
+                        spawnEnemyTime = 30;
+                    if (Time == 1000)
+                        spawnEnemyTime = 10;
+                    collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
+                    player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
+                    cross.Update(gameTime);
+                    hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
+                    spawn.Update(gameTime, Content, player.PlayerPosition);
+
+                    spawnTimer++;
+                    spawnEnemyTimer++;
+
+                
+            }
+
+
+
+            if (gameState == GameState.Playing && !isPlayerDead&& endless != true)
+            {
+                
+
                 if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                     this.Exit();
 
@@ -270,7 +417,7 @@ namespace SpaceBUTT
                     spawn.Balken(Content);
                 }
 
-                if (spawn.boss1.Count == 0 && level1)
+               if (spawn.boss1.Count == 0 && level1)
                 {
                     if (spawnEnemyTimer > spawnEnemyTime)
                     {
@@ -279,6 +426,7 @@ namespace SpaceBUTT
 
                     }
                 }
+                
                 if (spawnBoss2 && stopSpawn == true)
                 {
 
@@ -302,48 +450,68 @@ namespace SpaceBUTT
                     spawnedBoss = 1;
                     // spawnBoss = false;    
                 }
-
+                
                 if (level0 == true)
                 {
+                    if (sound == true)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(song2);
+                        sound = false;
+                    }
 
                     collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
                     hud.Update(gameTime, player.PlayerPosition, spawn.asteroid.Count() + spawn.enemies.Count(), spawnBoss);
                     spawn.Update(gameTime, Content, player.PlayerPosition);
-                    i++;
-                    if (i == 200)
+                    Time++;
+                    if (Time == 200)
                     {
                         gameState = GameState.Tutorial;
                         zaehler = 0;
                     }
-                    if (i == 300)
+                    if (Time == 300)
                     {
                         gameState = GameState.Tutorial;
                         zaehler = 1;
                     }
-                    if (i == 400)
+                    if (Time == 400)
                     {
                         gameState = GameState.Tutorial;
                         zaehler = 2;
                     }
-                    if (i == 500)
+                    if (Time == 500)
                     {
                         gameState = GameState.Tutorial;
                         zaehler = 3;
                     }
-                    if (i == 600)
+                    if (Time == 600)
                     {
                         level0 = false;
                         level1 = true;
                     }
                     spawnTimer++;
-                    spawnEnemyTimer++;
+                  //  spawnEnemyTimer++;
                     spawnGeschuetzTimer++;
                     spawnBalkenTimer++;
                 }
-                if (level1 == true)
+                if (level1 == true)    
                 {
+                    if (sound == true)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(song2);
+                        sound = false;
+                    }
+
+                    Time += 0.5f;
+                    if (Time == 610)
+                        spawnEnemyTime = 100;
+                    if (Time == 1000)
+                        spawnEnemyTime = 50;
+                    if (Time == 1500)
+                        spawnEnemyTime = 10;
                     collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
@@ -353,17 +521,27 @@ namespace SpaceBUTT
                     //  bomb.Update(gameTime);
                     spawnTimer++;
                     spawnEnemyTimer++;
-                    spawnGeschuetzTimer++;
-                    spawnBalkenTimer++;
-                    if (killedEnemies > 5)
+                  
+                    if (Time == 2000)
                     {
+                        gameState = GameState.Video;
+                        videobla0 = false;
+                        videorun1 = true;
+                        
+                        
                         level1 = false;
                         level2 = true;
-
+                    
                     }
                 }
                 if (level2 == true)
                 {
+                    if (sound == true)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(song2);
+                        sound = false;
+                    }
                     collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
@@ -373,16 +551,25 @@ namespace SpaceBUTT
                     spawnBoss2 = true;
                     if (boss1.BossLife <= 0)
                     {
+                        gameState = GameState.Video;
+                        videobla1 = false;
+                        videorun2 = true;
                         level2 = false;
                         level3 = true;
                     }
                     spawnTimer++;
-                    spawnEnemyTimer++;
+                   
                     spawnGeschuetzTimer++;
                     spawnBalkenTimer++;
                 }
                 if (level3 == true)
                 {
+                    if (sound == true)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(song2);
+                        sound = false;
+                    }
                     collision.Update(gameTime, player, spawn, hud, killedEnemies, boss1);
                     player.Update(gameTime, Content, spawn.asteroid, spawn.enemies);
                     cross.Update(gameTime);
@@ -390,8 +577,15 @@ namespace SpaceBUTT
                     spawn.Update(gameTime, Content, player.PlayerPosition);
                     station.Update(gameTime);
                     //spawnBoss
+                    if (zaehler2 == 2000)
+                    {
+                        gameState = GameState.Video;
+                        videobla2 = false;
+                        videorun3 = true;
+                    }
+                    zaehler2++;
                     spawnTimer++;
-                    spawnEnemyTimer++;
+                   
                     spawnGeschuetzTimer++;
                     spawnBalkenTimer++;
                 }
@@ -412,6 +606,7 @@ namespace SpaceBUTT
             {
                 LoadGame();
                 isLoading = false;
+               
             }
 
             killedEnemies = collision.IncrementkilledEnemie();
@@ -423,32 +618,148 @@ namespace SpaceBUTT
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.White);
-            //device.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.Blue, 1.0f, 0);
-
+            // Only call GetTexture if a video is playing or paused
+            graphics.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            if (gameState == GameState.StartMenu)
+            if (gameState == GameState.Credits)
             {
-                spriteBatch.Draw(background, backgroundPosition, Color.White);
-                spriteBatch.Draw(startButton, startButtonPosition, Color.White);
-                spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
-
-
+                spriteBatch.Draw(CreditScreen, CreditScreenPosition, Color.White);
+                spriteBatch.Draw(ReturnButton, returnButtonPosition2, Color.White);
             }
-
-            //show the loading screen when needed
-            if (gameState == GameState.Loading)
+            if (gameState == GameState.GameOver) 
             {
-                spriteBatch.Draw(loadingScreen, new Vector2((GraphicsDevice.Viewport.Width / 2) - (loadingScreen.Width / 2), (GraphicsDevice.Viewport.Height / 2) - (loadingScreen.Height / 2)), Color.YellowGreen);
+                spriteBatch.Draw(GameOverScreen, GameOverScreenPosition, Color.White);
+                spriteBatch.Draw(ReturnButton, returnButtonPosition, Color.White);
+                spriteBatch.Draw(QuitButton, quitButtonPosition, Color.White);
             }
+            if (gameState == GameState.Video)
+            {
+                MediaPlayer.Stop();
+                if (gameState == GameState.Video && videobla0)
+                {
+                    if (player2.State != MediaState.Stopped)
+                        videoTexture = player2.GetTexture();
+
+                    // Drawing to the rectangle will stretch the 
+                    // video to fill the screen
+                    Rectangle screen = new Rectangle(GraphicsDevice.Viewport.X,
+                        GraphicsDevice.Viewport.Y,
+                        GraphicsDevice.Viewport.Width,
+                        GraphicsDevice.Viewport.Height);
+
+                    // Draw the video, if we have a texture to draw.
 
 
+                    spriteBatch.Draw(videoTexture, screen, Color.White);
 
-            if (gameState == GameState.Playing)
+
+                    if (player2.State == MediaState.Stopped)
+                    {
+                        gameState = GameState.Playing;
+                        player2.Stop();
+                        sound = true;
+                       
+                      
+                    }
+                }
+                if (gameState == GameState.Video && videobla1)
+                {
+                    if (player3.State != MediaState.Stopped)
+                        videoTexture = player3.GetTexture();
+
+                    // Drawing to the rectangle will stretch the 
+                    // video to fill the screen
+                    Rectangle screen = new Rectangle(GraphicsDevice.Viewport.X,
+                        GraphicsDevice.Viewport.Y,
+                        GraphicsDevice.Viewport.Width,
+                        GraphicsDevice.Viewport.Height);
+
+                    // Draw the video, if we have a texture to draw.
+
+                    spriteBatch.Draw(videoTexture, screen, Color.White);
+
+                    if (player3.State == MediaState.Stopped)
+                    {
+                        gameState = GameState.Playing;
+                        player3.Stop();
+                        sound = true;
+                    }
+                }
+                if (gameState == GameState.Video && videobla2)
+                {
+                    if (player4.State != MediaState.Stopped)
+                        videoTexture = player4.GetTexture();
+
+                    // Drawing to the rectangle will stretch the 
+                    // video to fill the screen
+                    Rectangle screen = new Rectangle(GraphicsDevice.Viewport.X,
+                        GraphicsDevice.Viewport.Y,
+                        GraphicsDevice.Viewport.Width,
+                        GraphicsDevice.Viewport.Height);
+
+                    // Draw the video, if we have a texture to draw.
+
+                    spriteBatch.Draw(videoTexture, screen, Color.White);
+
+                    if (player4.State == MediaState.Stopped)
+                    {
+                        gameState = GameState.Playing;
+                        player4.Stop();
+                        sound = true;
+                    }
+                }
+                if (gameState == GameState.Video && videobla3)
+                {
+                    if (player5.State != MediaState.Stopped)
+                        videoTexture = player5.GetTexture();
+
+                    // Drawing to the rectangle will stretch the 
+                    // video to fill the screen
+                    Rectangle screen = new Rectangle(GraphicsDevice.Viewport.X,
+                        GraphicsDevice.Viewport.Y,
+                        GraphicsDevice.Viewport.Width,
+                        GraphicsDevice.Viewport.Height);
+
+                    // Draw the video, if we have a texture to draw.
+
+                    spriteBatch.Draw(videoTexture, screen, Color.White);
+
+                    if (player5.State == MediaState.Stopped)
+                    {
+                        gameState = GameState.StartMenu;
+                        player5.Stop();
+                        sound = true;
+                    }
+                }
+            }
+            else
             {
 
-                spriteBatch.Draw(pauseButton, new Vector2(700, 0), Color.White);
-                if (level0 == true)
+
+                if (gameState == GameState.StartMenu)
+                {
+
+
+                    // Drawing to the rectangle will stretch the 
+                    // video to fill the screen
+
+
+                    spriteBatch.Draw(background, backgroundPosition, Color.White);
+                    spriteBatch.Draw(startButton, startButtonPosition, Color.White);
+                    spriteBatch.Draw(endlessButton, endlessButtonPosition, Color.White);
+                    spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
+                    spriteBatch.Draw(CreditButton, CreditButtonPosition, Color.White);
+                    //spriteBatch.Draw(videoPlayer.GetTexture(), new Rectangle(0, 0, myVideoFile.Width, myVideoFile.Height), Color.CornflowerBlue);
+
+                }
+
+                //show the loading screen when needed
+                if (gameState == GameState.Loading)
+                {
+                    spriteBatch.Draw(loadingScreen, new Vector2((GraphicsDevice.Viewport.Width / 2) - (loadingScreen.Width / 2), (GraphicsDevice.Viewport.Height / 2) - (loadingScreen.Height / 2)), Color.YellowGreen);
+                }
+
+                if (gameState == GameState.Playing && endless == true) 
                 {
                     skybox.Draw(Projection, View, device);
                     GraphicsDevice.DepthStencilState = DepthStencilState.Default;
@@ -456,58 +767,75 @@ namespace SpaceBUTT
                     cross.Draw(Projection, View);
                     hud.Draw(spriteBatch, killedEnemies);
                     spawn.Draw(Projection, View);
+                }
+
+                if (gameState == GameState.Playing && endless != true)
+                {
+
+                    spriteBatch.Draw(pauseButton, new Vector2(700, 0), Color.White);
+                    if (level0 == true)
+                    {
+
+                        skybox.Draw(Projection, View, device);
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                        player.Draw(Projection, View);
+                        cross.Draw(Projection, View);
+                        hud.Draw(spriteBatch, killedEnemies);
+                        spawn.Draw(Projection, View);
+
+                    }
+                    if (level1 == true)
+                    {
+                        skybox.Draw(Projection, View, device);
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                        player.Draw(Projection, View);
+                        cross.Draw(Projection, View);
+                        hud.Draw(spriteBatch, killedEnemies);
+                        spawn.Draw(Projection, View);
+                        //bomb.Draw(Projection, View);
+                        // station.Draw(Projection, View);
+                    }
+                    if (level2 == true)
+                    {
+                        skybox.Draw(Projection, View, device);
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                        player.Draw(Projection, View);
+                        cross.Draw(Projection, View);
+                        hud.Draw(spriteBatch, killedEnemies);
+                        spawn.Draw(Projection, View);
+                        // station.Draw(Projection, View);
+                    }
+                    if (level3 == true)
+                    {
+                        skybox.Draw(Projection, View, device);
+                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+                        player.Draw(Projection, View);
+                        cross.Draw(Projection, View);
+                        hud.Draw(spriteBatch, killedEnemies);
+                        spawn.Draw(Projection, View);
+                        station.Draw(Projection, View);
+                    }
 
                 }
-                if (level1 == true)
+                if (gameState == GameState.Paused)
+                {
+                    spriteBatch.Draw(pausebackground, pausebackgroundPosition, Color.White);
+                    spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
+                }
+
+                if (gameState == GameState.Tutorial)
                 {
                     skybox.Draw(Projection, View, device);
                     GraphicsDevice.DepthStencilState = DepthStencilState.Default;
                     player.Draw(Projection, View);
                     cross.Draw(Projection, View);
                     hud.Draw(spriteBatch, killedEnemies);
-                    spawn.Draw(Projection, View);
-                    //bomb.Draw(Projection, View);
-                    // station.Draw(Projection, View);
-                }
-                if (level2 == true)
-                {
-                    skybox.Draw(Projection, View, device);
-                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-                    player.Draw(Projection, View);
-                    cross.Draw(Projection, View);
-                    hud.Draw(spriteBatch, killedEnemies);
-                    spawn.Draw(Projection, View);
-                    // station.Draw(Projection, View);
-                }
-                if (level3 == true)
-                {
-                    skybox.Draw(Projection, View, device);
-                    GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-                    player.Draw(Projection, View);
-                    cross.Draw(Projection, View);
-                    hud.Draw(spriteBatch, killedEnemies);
-                    spawn.Draw(Projection, View);
-                    station.Draw(Projection, View);
+                    hud.Draw2(spriteBatch, zaehler);
                 }
 
+                
             }
-            if (gameState == GameState.Paused)
-            {
-                spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
-            }
-
-            if (gameState == GameState.Tutorial)
-            {
-                skybox.Draw(Projection, View, device);
-                GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-                player.Draw(Projection, View);
-                cross.Draw(Projection, View);
-                hud.Draw(spriteBatch, killedEnemies);
-                hud.Draw2(spriteBatch, zaehler);
-            }
-
             spriteBatch.End();
-
             base.Draw(gameTime);
         }
 
@@ -518,20 +846,75 @@ namespace SpaceBUTT
             Rectangle mouseClickRect = new Rectangle(x, y, 10, 10);
 
             //check the startmenu
+            if (gameState == GameState.GameOver) 
+            {
+                Rectangle returnButtonRect = new Rectangle((int)returnButtonPosition.X, (int)returnButtonPosition.Y, 137, 40);
+                Rectangle quitButtonRect = new Rectangle((int)quitButtonPosition.X, (int)quitButtonPosition.Y, 137, 40);
+                if (mouseClickRect.Intersects(returnButtonRect)&& endless) //player clicked start button
+                {
+                    reset();
+                    gameState = GameState.Playing;
+                    endless = true;
+                    isLoading = false;
+                }
+                if (mouseClickRect.Intersects(quitButtonRect) && endless) //player clicked start button
+                {
+                    reset();
+                    gameState = GameState.StartMenu;
+                    endless = false;
+                    isLoading = false;
+                }
+                if (mouseClickRect.Intersects(returnButtonRect) && endless == false) //player clicked start button
+                {
+                    reset();
+                    gameState = GameState.Playing;
+                    endless = false;
+                    isLoading = true;
+                }
+                if (mouseClickRect.Intersects(quitButtonRect) && endless== false) //player clicked start button
+                {
+                    reset();
+                    gameState = GameState.StartMenu;
+                    endless = false;
+                    isLoading = false;
+                }
+            }
+            if (gameState == GameState.Credits)
+            {
+                Rectangle Return = new Rectangle((int)returnButtonPosition2.X, (int)returnButtonPosition2.Y, 137, 40);
+                if (mouseClickRect.Intersects(Return)) //player clicked start button
+                {
+                    gameState = GameState.StartMenu;
+                    
+                }
+            }
+
             if (gameState == GameState.StartMenu)
             {
                 Rectangle startButtonRect = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, 137, 40);
+                Rectangle endlessButtonRect = new Rectangle((int)endlessButtonPosition.X, (int)endlessButtonPosition.Y, 137, 40);
                 Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X, (int)exitButtonPosition.Y, 137, 40);
                 Rectangle endlesssButtonRect = new Rectangle((int)endlessButtonPosition.X, (int)endlessButtonPosition.Y, 137, 40);
+                Rectangle CreditButtonRect = new Rectangle((int)CreditButtonPosition.X, (int)CreditButtonPosition.Y, 137, 40);
 
                 if (mouseClickRect.Intersects(startButtonRect)) //player clicked start button
                 {
                     gameState = GameState.Loading;
                     isLoading = false;
                 }
+                if (mouseClickRect.Intersects(CreditButtonRect)) //player clicked start button
+                {
+                    gameState = GameState.Credits;
+                }
                 else if (mouseClickRect.Intersects(exitButtonRect)) //player clicked exit button
                 {
                     this.Exit();
+                }
+                else if (mouseClickRect.Intersects(endlessButtonRect)) //player clicked exit button
+                {
+                    gameState = GameState.Playing;
+                    endless = true;
+                    sound = true;
                 }
             }
 
@@ -560,20 +943,20 @@ namespace SpaceBUTT
 
         void LoadGame()
         {
-            pauseButton = Content.Load<Texture2D>(@"Menü/pause");
+            pauseButton = Content.Load<Texture2D>(@"Menü/pause2");
             resumeButton = Content.Load<Texture2D>(@"Menü/resumebutton");
             resumeButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (resumeButton.Width / 2),
                                                (GraphicsDevice.Viewport.Height / 2) - (resumeButton.Height / 2));
             Thread.Sleep(1000);
 
-            gameState = GameState.Playing;
+            gameState = GameState.Video;
             isLoading = false;
         }
 
 
         void reset()
         {
-            gameState = GameState.StartMenu;
+           // gameState = GameState.GameOver;
             player.PlayerPosition = Vector3.Zero;
             player.PlayerHealth = 100.0f;
             spawnEnemyTime = 50;
